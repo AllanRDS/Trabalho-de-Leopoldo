@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="600" height="200" fill="white"/>
+    
+    <!-- Grid lines -->
+    <line x1="50" y1="100" x2="550" y2="100" stroke="#9ca3af" stroke-width="1" stroke-dasharray="5,5"/>
+    
+    <!-- Analog waveform (smooth sine wave) -->
+    <path d="M 50 100 Q 87.5 50, 125 100 T 200 100 T 275 100 T 350 100 T 425 100 T 500 100" 
+          stroke="#3b82f6" stroke-width="2" fill="none"/>
+    
+    <!-- Digital samples (dots) -->
+    <circle cx="50" cy="100" r="4" fill="#ef4444"/>
+    <circle cx="75" cy="75" r="4" fill="#ef4444"/>
+    <circle cx="100" cy="60" r="4" fill="#ef4444"/>
+    <circle cx="125" cy="75" r="4" fill="#ef4444"/>
+    <circle cx="150" cy="100" r="4" fill="#ef4444"/>
+    <circle cx="175" cy="125" r="4" fill="#ef4444"/>
+    <circle cx="200" cy="140" r="4" fill="#ef4444"/>
+    <circle cx="225" cy="125" r="4" fill="#ef4444"/>
+    <circle cx="250" cy="100" r="4" fill="#ef4444"/>
+    <circle cx="275" cy="75" r="4" fill="#ef4444"/>
+    <circle cx="300" cy="60" r="4" fill="#ef4444"/>
+    <circle cx="325" cy="75" r="4" fill="#ef4444"/>
+    <circle cx="350" cy="100" r="4" fill="#ef4444"/>
+    
+    <!-- Vertical sample lines -->
+    <line x1="75" y1="75" x2="75" y2="180" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="100" y1="60" x2="100" y2="180" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="125" y1="75" x2="125" y2="180" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="150" y1="100" x2="150" y2="180" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <!-- Labels -->
+    <text x="300" y="25" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Áudio Analógico vs Digital</text>
+    <text x="100" y="195" font-size="11" fill="#3b82f6" font-weight="600">Onda Analógica (Contínua)</text>
+    <text x="400" y="195" font-size="11" fill="#ef4444" font-weight="600">Amostras Digitais (Discretas)</text>
+</svg>

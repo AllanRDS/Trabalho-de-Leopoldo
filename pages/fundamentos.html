@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos do Áudio Digital</title>
+    <link rel="stylesheet" href="../css/modern-theme.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Modern Header with Logo -->
+        <header class="modern-header">
+            <div class="header-container">
+                <a href="../index.html" class="logo">
+                    <div class="logo-icon">AD</div>
+                    <div class="logo-text">
+                        <span class="logo-title">Áudio Digital</span>
+                        <span class="logo-subtitle">Sistemas Multimídia</span>
+                    </div>
+                </a>
+
+                <nav class="main-nav" id="mainNav">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="fundamentos.html" class="nav-link active">Fundamentos</a>
+                    <a href="digitalizacao.html" class="nav-link">Digitalização</a>
+                    <a href="formatos.html" class="nav-link">Formatos</a>
+                    <a href="pratica.html" class="nav-link">Prática</a>
+                    <a href="aplicacoes.html" class="nav-link">Aplicações</a>
+                    <a href="quiz.html" class="nav-link">Quiz</a>
+                </nav>
+
+                <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+            </div>
+        </header>
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">Fundamentos do Áudio Digital</h1>
+            <p class="page-subtitle">Conceitos básicos de áudio digital e digitalização</p>
+        </div>
+
+        <section class="section active">
+            <div class="concept-card">
+                <h3>O que é Áudio Digital?</h3>
+                <p>Áudio digital é a representação do som em formato numérico binário, permitindo que computadores possam gravar, armazenar, processar e reproduzir som. Diferente do áudio analógico (variações contínuas de voltagem), o áudio digital é uma sequência discreta de números representando a amplitude do som em intervalos regulares.</p>
+
+                <div style="text-align: center; margin: 1.5rem 0;">
+                    <svg width="600" height="200" viewBox="0 0 600 200" style="max-width: 100%; border: 2px solid #e5e7eb; border-radius: 8px; background: white;">
+                        <!-- Eixos -->
+                        <line x1="50" y1="100" x2="550" y2="100" stroke="#9ca3af" stroke-width="1" stroke-dasharray="5,5"/>
+                        <text x="20" y="105" font-size="12" fill="#6b7280">0</text>
+                        <!-- Onda senoidal -->
+                        <path d="M 50 100 Q 87.5 50, 125 100 T 200 100 T 275 100 T 350 100 T 425 100 T 500 100 T 550 100"
+                              stroke="#2563eb" stroke-width="3" fill="none"/>
+                        <!-- Pontos de amostragem -->
+                        <circle cx="125" cy="50" r="4" fill="#ef4444"/>
+                        <circle cx="200" cy="100" r="4" fill="#ef4444"/>
+                        <circle cx="275" cy="150" r="4" fill="#ef4444"/>
+                        <circle cx="350" cy="100" r="4" fill="#ef4444"/>
+                        <circle cx="425" cy="50" r="4" fill="#ef4444"/>
+                        <text x="300" y="180" font-size="14" fill="#374151" text-anchor="middle" font-weight="600">Onda Sonora Digital (Amostras em vermelho)</text>
+                    </svg>
+                </div>
+
+                <div class="info-box" style="margin-top: 15px;">
+                    <p><strong>Conceito-chave:</strong> O áudio digital "fotografa" ondas sonoras milhares de vezes por segundo, criando uma aproximação precisa do som original.</p>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Do Analógico ao Digital</h3>
+
+                <div style="text-align: center; margin: 1.5rem 0;">
+                    <svg width="500" height="150" viewBox="0 0 500 150" style="max-width: 100%; border: 2px solid #e5e7eb; border-radius: 8px; background: white;">
+                        <!-- Microfone -->
+                        <circle cx="50" cy="75" r="25" fill="#3b82f6" opacity="0.2"/>
+                        <rect x="40" y="60" width="20" height="30" fill="#3b82f6" rx="10"/>
+                        <line x1="50" y1="90" x2="50" y2="110" stroke="#3b82f6" stroke-width="3"/>
+                        <text x="50" y="135" font-size="11" fill="#1e40af" text-anchor="middle" font-weight="600">Microfone</text>
+
+                        <!-- Seta 1 -->
+                        <path d="M 85 75 L 125 75" stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+                        <!-- ADC -->
+                        <rect x="125" y="50" width="80" height="50" fill="#2563eb" rx="5"/>
+                        <text x="165" y="75" font-size="12" fill="white" text-anchor="middle" font-weight="bold">ADC</text>
+                        <text x="165" y="90" font-size="9" fill="white" text-anchor="middle">Conversor</text>
+                        <text x="165" y="135" font-size="11" fill="#1e40af" text-anchor="middle" font-weight="600">Conversão A/D</text>
+
+                        <!-- Seta 2 -->
+                        <path d="M 215 75 L 255 75" stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+                        <!-- Dados binários -->
+                        <rect x="255" y="50" width="80" height="50" fill="#10b981" rx="5"/>
+                        <text x="295" y="72" font-size="10" fill="white" text-anchor="middle" font-family="monospace">01001010</text>
+                        <text x="295" y="86" font-size="10" fill="white" text-anchor="middle" font-family="monospace">11010001</text>
+                        <text x="295" y="135" font-size="11" fill="#065f46" text-anchor="middle" font-weight="600">Dados Digitais</text>
+
+                        <!-- Seta 3 -->
+                        <path d="M 345 75 L 385 75" stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+                        <!-- Computador -->
+                        <rect x="385" y="55" width="70" height="45" fill="#1e293b" rx="3"/>
+                        <rect x="390" y="60" width="60" height="35" fill="#2563eb" rx="2"/>
+                        <rect x="405" y="100" width="30" height="5" fill="#64748b" rx="1"/>
+                        <text x="420" y="135" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">Computador</text>
+
+                        <!-- Definição de seta -->
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                <polygon points="0 0, 10 3, 0 6" fill="#6b7280" />
+                            </marker>
+                        </defs>
+                    </svg>
+                </div>
+
+                <p>A conversão ocorre em 4 etapas principais:</p>
+
+                <div style="margin: 20px 0;">
+                    <h4>1. Captura do Som (Transdução)</h4>
+                    <p>Microfone converte ondas sonoras em sinais elétricos analógicos.</p>
+                </div>
+
+                <div style="margin: 20px 0;">
+                    <h4>2. Amostragem (Sampling)</h4>
+                    <p>Conversor ADC "fotografa" o sinal milhares de vezes por segundo. A frequência dessas medições é a taxa de amostragem.</p>
+                </div>
+
+                <div style="margin: 20px 0;">
+                    <h4>3. Quantização</h4>
+                    <p>Cada amostra é convertida em número digital. Com 16 bits, temos 65.536 níveis de amplitude.</p>
+                </div>
+
+                <div style="margin: 20px 0;">
+                    <h4>4. Armazenamento</h4>
+                    <p>Números são salvos em arquivos (WAV, MP3) para processamento.</p>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <p><strong>Exemplo:</strong> CD de áudio captura 44.100 amostras/segundo por canal = 88.200 valores/segundo em estéreo.</p>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Taxa de Amostragem (Sample Rate)</h3>
+                <p><strong>Definição:</strong> A taxa de amostragem é o número de amostras (medições do sinal) capturadas por segundo. É medida em Hertz (Hz) ou kilohertz (kHz). Quanto maior a taxa de amostragem, mais fielmente o áudio digital representa o som original.</p>
+
+                <p style="margin-top: 20px;"><strong>Por que isso importa?</strong> A taxa de amostragem determina a frequência máxima que pode ser reproduzida corretamente no áudio digital. Segundo o Teorema de Nyquist-Shannon, a taxa de amostragem deve ser pelo menos o dobro da frequência mais alta que desejamos capturar.</p>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <p><strong>Teorema de Nyquist-Shannon:</strong></p>
+                    <p style="margin-top: 10px;">Se queremos reproduzir frequências até 20.000 Hz (limite da audição humana), precisamos de uma taxa de amostragem de pelo menos 40.000 Hz. O padrão CD usa 44.100 Hz, oferecendo uma margem de segurança.</p>
+
+                    <div style="text-align: center; margin-top: 1.5rem;">
+                        <svg width="550" height="180" viewBox="0 0 550 180" style="max-width: 100%; border: 2px solid #e5e7eb; border-radius: 8px; background: white;">
+                            <!-- Alta taxa de amostragem (boa) -->
+                            <text x="140" y="25" font-size="13" fill="#059669" text-anchor="middle" font-weight="600">Taxa Alta (44.1kHz) ✓</text>
+                            <path d="M 20 60 Q 35 40, 50 60 T 80 60 T 110 60 T 140 60 T 170 60 T 200 60 T 230 60 T 260 60" stroke="#3b82f6" stroke-width="2" fill="none"/>
+                            <circle cx="50" cy="60" r="3" fill="#ef4444"/>
+                            <circle cx="80" cy="60" r="3" fill="#ef4444"/>
+                            <circle cx="110" cy="60" r="3" fill="#ef4444"/>
+                            <circle cx="140" cy="60" r="3" fill="#ef4444"/>
+                            <circle cx="170" cy="60" r="3" fill="#ef4444"/>
+                            <circle cx="200" cy="60" r="3" fill="#ef4444"/>
+                            <circle cx="230" cy="60" r="3" fill="#ef4444"/>
+                            <line x1="50" y1="60" x2="50" y2="80" stroke="#10b981" stroke-width="1" stroke-dasharray="2,2"/>
+                            <line x1="80" y1="60" x2="80" y2="80" stroke="#10b981" stroke-width="1" stroke-dasharray="2,2"/>
+                            <line x1="110" y1="60" x2="110" y2="80" stroke="#10b981" stroke-width="1" stroke-dasharray="2,2"/>
+                            <line x1="140" y1="60" x2="140" y2="80" stroke="#10b981" stroke-width="1" stroke-dasharray="2,2"/>
+                            <line x1="170" y1="60" x2="170" y2="80" stroke="#10b981" stroke-width="1" stroke-dasharray="2,2"/>
+                            <line x1="200" y1="60" x2="200" y2="80" stroke="#10b981" stroke-width="1" stroke-dasharray="2,2"/>
+                            <line x1="230" y1="60" x2="230" y2="80" stroke="#10b981" stroke-width="1" stroke-dasharray="2,2"/>
+                            <text x="140" y="95" font-size="11" fill="#065f46" text-anchor="middle">Muitas amostras = Boa reprodução</text>
+
+                            <!-- Baixa taxa de amostragem (ruim) -->
+                            <text x="410" y="25" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="600">Taxa Baixa (8kHz) ✗</text>
+                            <path d="M 290 60 Q 305 40, 320 60 T 350 60 T 380 60 T 410 60 T 440 60 T 470 60 T 500 60 T 530 60" stroke="#3b82f6" stroke-width="2" fill="none" opacity="0.5"/>
+                            <circle cx="350" cy="60" r="3" fill="#ef4444"/>
+                            <circle cx="410" cy="60" r="3" fill="#ef4444"/>
+                            <circle cx="470" cy="60" r="3" fill="#ef4444"/>
+                            <line x1="350" y1="60" x2="350" y2="80" stroke="#dc2626" stroke-width="1" stroke-dasharray="2,2"/>
+                            <line x1="410" y1="60" x2="410" y2="80" stroke="#dc2626" stroke-width="1" stroke-dasharray="2,2"/>
+                            <line x1="470" y1="60" x2="470" y2="80" stroke="#dc2626" stroke-width="1" stroke-dasharray="2,2"/>
+                            <path d="M 290 60 L 350 60 L 410 60 L 470 60 L 530 60" stroke="#f59e0b" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+                            <text x="410" y="95" font-size="11" fill="#991b1b" text-anchor="middle">Poucas amostras = Perda de qualidade</text>
+
+                            <!-- Comparação visual -->
+                            <rect x="20" y="110" width="510" height="60" fill="#f3f4f6" rx="5"/>
+                            <text x="275" y="130" font-size="12" fill="#374151" text-anchor="middle" font-weight="600">Fórmula de Nyquist: Taxa de Amostragem ≥ 2 × Frequência Máxima</text>
+                            <text x="275" y="150" font-size="11" fill="#6b7280" text-anchor="middle">Para capturar 20 kHz: 2 × 20.000 = 40.000 Hz mínimo</text>
+                            <text x="275" y="165" font-size="11" fill="#059669" text-anchor="middle" font-weight="600">CD usa 44.100 Hz (margem de segurança)</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <p><strong>Taxas de Amostragem Comuns:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 15px; line-height: 2;">
+                        <li><strong>8.000 Hz:</strong> Telefonia digital, qualidade de voz básica. Usado em chamadas telefônicas tradicionais (apenas inteligibilidade)</li>
+                        <li><strong>22.050 Hz:</strong> Rádio AM, podcasts de baixa qualidade. Economiza espaço mas perde detalhes de alta frequência</li>
+                        <li><strong>44.100 Hz (44.1 kHz):</strong> Padrão CD de áudio. Qualidade considerada "transparente" para audição humana</li>
+                        <li><strong>48.000 Hz (48 kHz):</strong> Vídeo profissional, DVD, produção de cinema. Escolhido por sincronização com vídeo</li>
+                        <li><strong>96.000 Hz (96 kHz):</strong> Áudio de alta resolução, gravação profissional. Usado em estúdios de masterização</li>
+                        <li><strong>192.000 Hz (192 kHz):</strong> Áudio ultra-alta resolução. Usado em produção de áudio de altíssima fidelidade</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Profundidade de Bits (Bit Depth)</h3>
+
+                <div style="text-align: center; margin-bottom: 1.5rem;">
+                    <svg width="600" height="220" viewBox="0 0 600 220" style="max-width: 100%; border: 2px solid #e5e7eb; border-radius: 8px; background: white;">
+                        <!-- 8 bits -->
+                        <text x="100" y="25" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="600">8 bits (256 níveis)</text>
+                        <rect x="20" y="35" width="160" height="120" fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="5"/>
+                        <line x="100" y="55" x2="100" y2="145" stroke="#6b7280" stroke-width="1"/>
+                        <!-- Apenas 8 níveis para visualizar -->
+                        <line x="30" y="145" x2="170" y2="145" stroke="#ef4444" stroke-width="2"/>
+                        <line x="30" y="132" x2="170" y2="132" stroke="#ef4444" stroke-width="2"/>
+                        <line x="30" y="119" x2="170" y2="119" stroke="#ef4444" stroke-width="2"/>
+                        <line x="30" y="106" x2="170" y2="106" stroke="#ef4444" stroke-width="2"/>
+                        <line x="30" y="93" x2="170" y2="93" stroke="#ef4444" stroke-width="2"/>
+                        <line x="30" y="80" x2="170" y2="80" stroke="#ef4444" stroke-width="2"/>
+                        <line x="30" y="67" x2="170" y2="67" stroke="#ef4444" stroke-width="2"/>
+                        <line x="30" y="54" x2="170" y2="54" stroke="#ef4444" stroke-width="2"/>
+                        <text x="100" y="170" font-size="11" fill="#991b1b" text-anchor="middle">Poucos níveis</text>
+                        <text x="100" y="185" font-size="10" fill="#991b1b" text-anchor="middle">Ruído visível</text>
+
+                        <!-- 16 bits -->
+                        <text x="300" y="25" font-size="13" fill="#059669" text-anchor="middle" font-weight="600">16 bits (65.536 níveis)</text>
+                        <rect x="220" y="35" width="160" height="120" fill="#d1fae5" stroke="#059669" stroke-width="2" rx="5"/>
+                        <line x="300" y="55" x2="300" y2="145" stroke="#6b7280" stroke-width="1"/>
+                        <!-- Muitas linhas para simular alta resolução -->
+                        <rect x="230" y="54" width="140" height="1" fill="#10b981" opacity="0.8"/>
+                        <rect x="230" y="58" width="140" height="1" fill="#10b981" opacity="0.8"/>
+                        <rect x="230" y="62" width="140" height="1" fill="#10b981" opacity="0.8"/>
+                        <rect x="230" y="66" width="140" height="1" fill="#10b981" opacity="0.8"/>
+                        <rect x="230" y="70" width="140" height="1" fill="#10b981" opacity="0.8"/>
+                        <rect x="230" y="74" width="140" height="1" fill="#10b981" opacity="0.8"/>
+                        <rect x="230" y="78" width="140" height="1" fill="#10b981" opacity="0.8"/>
+                        <rect x="230" y="82" width="140" height="1" fill="#10b981" opacity="0.8"/>
+                        <rect x="230" y="86" width="140" height="1" fill="#10b981" opacity="0.8"/>
+                        <rect x="230" y="90" width="140" height="1" fill="#10b981" opacity="0.8"/>
+                        <text x="300" y="165" font-size="10" fill="#374151" text-anchor="middle">...</text>
+                        <text x="300" y="170" font-size="11" fill="#065f46" text-anchor="middle">Muitos níveis</text>
+                        <text x="300" y="185" font-size="10" fill="#065f46" text-anchor="middle">Qualidade CD</text>
+
+                        <!-- 24 bits -->
+                        <text x="500" y="25" font-size="13" fill="#7c3aed" text-anchor="middle" font-weight="600">24 bits (16.7M níveis)</text>
+                        <rect x="420" y="35" width="160" height="120" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="5"/>
+                        <line x="500" y="55" x2="500" y2="145" stroke="#6b7280" stroke-width="1"/>
+                        <!-- Gradiente suave para simular resolução ultra-alta -->
+                        <defs>
+                            <linearGradient id="smoothGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#c4b5fd;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="430" y="54" width="140" height="91" fill="url(#smoothGrad)"/>
+                        <text x="500" y="170" font-size="11" fill="#5b21b6" text-anchor="middle">Resolução máxima</text>
+                        <text x="500" y="185" font-size="10" fill="#5b21b6" text-anchor="middle">Estúdios profissionais</text>
+
+                        <!-- Legenda -->
+                        <rect x="50" y="195" width="500" height="20" fill="#f3f4f6" rx="3"/>
+                        <text x="300" y="209" font-size="11" fill="#374151" text-anchor="middle" font-weight="600">Mais bits = Mais precisão = Menos ruído = Maior faixa dinâmica</text>
+                    </svg>
+                </div>
+
+                <p><strong>Definição:</strong> A profundidade de bits é a quantidade de bits usados para representar cada amostra de áudio. Determina quantos níveis diferentes de amplitude podem ser representados. Quanto maior a profundidade de bits, mais precisa é a representação do som e maior é a faixa dinâmica.</p>
+
+                <p style="margin-top: 20px;"><strong>Faixa Dinâmica:</strong> É a diferença entre o som mais alto e o som mais baixo que pode ser representado. Cada bit adicional adiciona aproximadamente 6 dB de faixa dinâmica. Por exemplo:</p>
+
+                <ul style="margin-left: 20px; margin-top: 15px; line-height: 2;">
+                    <li><strong>8 bits:</strong> 256 níveis possíveis, ~48 dB de faixa dinâmica. Qualidade telefone ou rádio AM, com ruído perceptível</li>
+                    <li><strong>16 bits:</strong> 65.536 níveis possíveis, ~96 dB de faixa dinâmica. Padrão CD, suficiente para a maioria das aplicações</li>
+                    <li><strong>24 bits:</strong> 16.777.216 níveis possíveis, ~144 dB de faixa dinâmica. Usado em gravação e produção profissional</li>
+                    <li><strong>32 bits float:</strong> Precisão de ponto flutuante, ~1.528 dB teóricos. Usado em processamento digital de áudio (DAW)</li>
+                </ul>
+
+                <div class="info-box" style="margin-top: 25px;">
+                    <p><strong>Importante:</strong> 96 dB (16 bits) é uma faixa dinâmica enorme! É maior que a diferença entre um sussurro (30 dB) e um show de rock (120 dB). Por isso, 16 bits é considerado suficiente para reprodução, enquanto 24 bits oferece margem extra para produção e masterização.</p>
+                </div>
+
+                <p style="margin-top: 20px;"><strong>Ruído de Quantização:</strong> Quando convertemos um sinal analógico contínuo em valores digitais discretos, introduzimos pequenos erros de arredondamento. Com 16 bits ou mais, esse "ruído" é imperceptível ao ouvido humano.</p>
+            </div>
+
+            <div class="concept-card">
+                <h3>Tamanho de Arquivo e Taxa de Bits</h3>
+                <p><strong>Cálculo do Tamanho:</strong> O tamanho de um arquivo de áudio não comprimido pode ser calculado pela fórmula:</p>
+
+                <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center; border: 2px solid #e5e5e5;">
+                    <p style="font-size: 1.2em; font-weight: 600; color: #2d3748;">Tamanho = Taxa de Amostragem × Profundidade de Bits × Canais × Duração</p>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>Exemplo Prático - Arquivo Estéreo de 1 minuto em qualidade CD:</strong></p>
+                    <p style="margin-top: 15px;">44.100 amostras/seg × 16 bits × 2 canais × 60 segundos</p>
+                    <p>= 44.100 × 2 bytes × 2 × 60</p>
+                    <p>= <strong>10.584.000 bytes ≈ 10 MB</strong></p>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h4 style="color: #2d3748; font-size: 1.1em; margin-bottom: 15px;">Comparação de Tamanhos por Configuração:</h4>
+                    <div style="background: white; padding: 20px; border-radius: 8px; border: 2px solid #e5e7eb;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr style="background: #f9fafb; border-bottom: 2px solid #e5e7eb;">
+                                <th style="padding: 12px; text-align: left; color: #2d3748;">Configuração</th>
+                                <th style="padding: 12px; text-align: center; color: #2d3748;">Taxa/Bits</th>
+                                <th style="padding: 12px; text-align: right; color: #2d3748;">1 minuto</th>
+                                <th style="padding: 12px; text-align: right; color: #2d3748;">1 hora</th>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e5e7eb;">
+                                <td style="padding: 12px;">Telefone (Mono)</td>
+                                <td style="padding: 12px; text-align: center;">8 kHz / 8-bit</td>
+                                <td style="padding: 12px; text-align: right;">0.48 MB</td>
+                                <td style="padding: 12px; text-align: right;">28.8 MB</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e5e7eb;">
+                                <td style="padding: 12px;">Rádio (Mono)</td>
+                                <td style="padding: 12px; text-align: center;">22 kHz / 16-bit</td>
+                                <td style="padding: 12px; text-align: right;">2.6 MB</td>
+                                <td style="padding: 12px; text-align: right;">158 MB</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e5e7eb; background: #f0fdf4;">
+                                <td style="padding: 12px;"><strong>CD (Estéreo)</strong></td>
+                                <td style="padding: 12px; text-align: center;"><strong>44.1 kHz / 16-bit</strong></td>
+                                <td style="padding: 12px; text-align: right;"><strong>10.1 MB</strong></td>
+                                <td style="padding: 12px; text-align: right;"><strong>605 MB</strong></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e5e7eb;">
+                                <td style="padding: 12px;">DVD (Estéreo)</td>
+                                <td style="padding: 12px; text-align: center;">48 kHz / 24-bit</td>
+                                <td style="padding: 12px; text-align: right;">16.9 MB</td>
+                                <td style="padding: 12px; text-align: right;">1.01 GB</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;">Hi-Res (Estéreo)</td>
+                                <td style="padding: 12px; text-align: center;">96 kHz / 24-bit</td>
+                                <td style="padding: 12px; text-align: right;">33.7 MB</td>
+                                <td style="padding: 12px; text-align: right;">2.02 GB</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>História do Áudio Digital</h3>
+                <p>A evolução do áudio digital representa uma das maiores transformações tecnológicas na história da música e comunicação:</p>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.1em; margin-bottom: 15px;">Marcos Históricos Importantes:</h4>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li><strong>1937:</strong> Alec Reeves inventa o PCM (Pulse Code Modulation), fundamento do áudio digital</li>
+                        <li><strong>1969:</strong> NHK do Japão desenvolve primeiro gravador digital experimental</li>
+                        <li><strong>1982:</strong> Lançamento do CD pela Philips e Sony - padrão 44.1 kHz/16-bit estabelecido</li>
+                        <li><strong>1987:</strong> DAT (Digital Audio Tape) para gravação profissional</li>
+                        <li><strong>1991:</strong> Desenvolvimento do codec MP3 pelo Fraunhofer Institute</li>
+                        <li><strong>1995:</strong> DAWs acessíveis para computadores pessoais (Pro Tools, Cubase)</li>
+                        <li><strong>2001:</strong> iPod revoluciona consumo de música digital portátil</li>
+                        <li><strong>2008:</strong> Streaming de música (Spotify) inicia mudança no consumo</li>
+                    </ul>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <p><strong>Por que 44.1 kHz se tornou o padrão?</strong></p>
+                    <p style="margin-top: 10px;">O valor 44.100 Hz foi escolhido porque permite capturar até 22.05 kHz (Teorema de Nyquist), cobrindo perfeitamente a audição humana (20 Hz - 20 kHz). A escolha específica de 44.1 kHz relaciona-se com compatibilidade com sistemas de vídeo da época, que usavam 29.97 frames/segundo (NTSC) e 25 frames/segundo (PAL).</p>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Conceitos Avançados: Dithering</h3>
+                <p>Quando reduzimos a profundidade de bits (exemplo: de 24 para 16 bits), o dithering adiciona ruído controlado de baixo nível que melhora a qualidade percebida:</p>
+
+                <div style="margin-top: 20px;">
+                    <h4 style="color: #2d3748; font-size: 1.1em; margin-bottom: 15px;">O que é Dithering?</h4>
+                    <p>Dithering é a adição intencional de ruído antes da quantização. Paradoxalmente, adicionar ruído melhora a qualidade porque:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li>Transforma erro de quantização (distorção harmônica) em ruído aleatório</li>
+                        <li>Ruído aleatório é menos perceptível que distorção harmônica</li>
+                        <li>Preserva detalhes de baixo nível que seriam perdidos</li>
+                        <li>Permite representar sinais abaixo de 1 bit através de média temporal</li>
+                    </ul>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <p><strong>Aplicação Prática:</strong> Sempre use dithering ao exportar de 24 para 16 bits (masterização para CD). DAWs profissionais aplicam dithering automaticamente na exportação quando configurado corretamente.</p>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Aplicações Práticas</h3>
+                <p>O conhecimento destes fundamentos é essencial para:</p>
+                <ul style="margin-left: 20px; margin-top: 15px; line-height: 2;">
+                    <li><strong>Produção Musical:</strong> Escolher as configurações corretas de gravação e exportação</li>
+                    <li><strong>Streaming:</strong> Balancear qualidade e tamanho de arquivo para transmissão pela internet</li>
+                    <li><strong>Games:</strong> Otimizar áudio para rodar em tempo real sem sobrecarregar o processador</li>
+                    <li><strong>Podcasts:</strong> Configurar qualidade adequada para voz humana</li>
+                    <li><strong>Cinema e TV:</strong> Manter sincronização perfeita com vídeo</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <div style="text-align: center; margin-bottom: 1rem;">
+                <button id="bgMusicBtn" onclick="playBackgroundMusic()" style="background: #2563eb; border: 2px solid #2563eb; color: white; padding: 0.5rem 1.25rem; border-radius: 25px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; transition: all 0.3s;">
+                    <span id="musicIcon">▶</span>
+                    <span id="musicText">Tocar Música Ambiente</span>
+                </button>
+                <span id="musicStatus" style="display: block; color: rgba(255,255,255,0.7); font-size: 0.875rem; margin-top: 0.5rem; min-height: 20px;"></span>
+            </div>
+            <p>Protótipo Educacional - Áudio Digital para Sistemas Multimídia</p>
+            <p style="margin-top: 10px;">Desenvolvido com HTML, CSS e JavaScript + Web Audio API</p>
+        </footer>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/background-music.js"></script>
+</body>
+</html>

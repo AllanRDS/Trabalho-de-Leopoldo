@@ -1,0 +1,154 @@
+/* Quiz Styles - Modern Theme */
+.quiz-question {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+}
+
+.quiz-question:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-media {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.quiz-media img, .quiz-media video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+}
+
+.quiz-media audio {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.quiz-options {
+    margin: 1.5rem 0;
+}
+
+.quiz-option {
+    background: #f8fafc;
+    padding: 1rem 1.5rem;
+    margin: 0.75rem 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 2px solid #e2e8f0;
+    font-weight: 500;
+}
+
+.quiz-option:hover {
+    border-color: #2563eb;
+    background: white;
+    transform: translateX(4px);
+}
+
+.quiz-option.selected {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+.quiz-option.correct {
+    background: #10b981;
+    color: white;
+    border-color: #10b981;
+}
+
+.quiz-option.incorrect {
+    background: #ef4444;
+    color: white;
+    border-color: #ef4444;
+}
+
+.quiz-result {
+    background: #f8fafc;
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border: 2px solid #2563eb;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.controls button {
+    min-width: 180px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .quiz-question {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .quiz-option {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.9375rem;
+    }
+
+    .quiz-result {
+        padding: 2rem;
+        font-size: 1.125rem;
+    }
+
+    .controls button {
+        min-width: 150px;
+        padding: 0.75rem 1.25rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .quiz-question {
+        padding: 1.25rem;
+        margin: 0.75rem 0;
+    }
+
+    .quiz-media {
+        margin: 1rem 0;
+    }
+
+    .quiz-option {
+        padding: 0.75rem 1rem;
+        margin: 0.5rem 0;
+        font-size: 0.875rem;
+    }
+
+    .quiz-option:hover {
+        transform: translateX(2px);
+    }
+
+    .quiz-result {
+        padding: 1.75rem;
+        font-size: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .controls {
+        gap: 0.75rem;
+        margin: 1.5rem 0;
+    }
+
+    .controls button {
+        min-width: 130px;
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
+    }
+}

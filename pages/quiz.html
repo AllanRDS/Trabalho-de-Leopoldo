@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Teste seus Conhecimentos</title>
+
+    <link rel="stylesheet" href="../css/modern-theme.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/quiz.css">
+</head>
+<body>
+    <div class="container">
+        <header class="modern-header">
+            <div class="header-container">
+                <a href="../index.html" class="logo">
+                    <div class="logo-icon">AD</div>
+                    <div class="logo-text">
+                        <span class="logo-title">Áudio Digital</span>
+                        <span class="logo-subtitle">Sistemas Multimídia</span>
+                    </div>
+                </a>
+                <nav class="main-nav" id="mainNav">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="fundamentos.html" class="nav-link">Fundamentos</a>
+                    <a href="digitalizacao.html" class="nav-link">Digitalização</a>
+                    <a href="formatos.html" class="nav-link">Formatos</a>
+                    <a href="pratica.html" class="nav-link">Prática</a>
+                    <a href="aplicacoes.html" class="nav-link">Aplicações</a>
+                    <a href="quiz.html" class="nav-link active">Quiz</a>
+                </nav>
+                <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+            </div>
+        </header>
+        <div class="page-header">
+            <h1 class="page-title">Quiz - Teste seus Conhecimentos</h1>
+            <p class="page-subtitle">30 questões sobre áudio digital</p>
+        </div>
+
+        <section class="section active">
+            <p style="color: #64748b; margin-bottom: 2rem; font-size: 1.0625rem;">10 questões aleatórias selecionadas de um banco de 30 perguntas</p>
+
+            <div id="quizContainer"></div>
+
+            <div class="controls">
+                <button onclick="checkAnswers()" id="checkBtn">Verificar Respostas</button>
+                <button onclick="resetQuiz()">Refazer Quiz (novas questões)</button>
+            </div>
+
+            <div id="quizResult" class="quiz-result" style="display: none;"></div>
+        </section>
+
+        <footer>
+            <div style="text-align: center; margin-bottom: 1rem;">
+                <button id="bgMusicBtn" onclick="playBackgroundMusic()" style="background: #2563eb; border: 2px solid #2563eb; color: white; padding: 0.5rem 1.25rem; border-radius: 25px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; transition: all 0.3s;">
+                    <span id="musicIcon">▶</span>
+                    <span id="musicText">Tocar Música Ambiente</span>
+                </button>
+                <span id="musicStatus" style="display: block; color: rgba(255,255,255,0.7); font-size: 0.875rem; margin-top: 0.5rem; min-height: 20px;"></span>
+            </div>
+            <p>Protótipo Educacional - Áudio Digital para Sistemas Multimídia</p>
+            <p style="margin-top: 10px;">Desenvolvido com HTML, CSS e JavaScript + Web Audio API</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript para Quiz -->
+    <script src="../js/navigation.js"></script>
+    <script src="../js/background-music.js"></script>
+    <script src="../js/quiz.js"></script>
+</body>
+</html>

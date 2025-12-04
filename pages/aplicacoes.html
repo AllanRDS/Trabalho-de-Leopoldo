@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicações do Áudio Digital</title>
+
+    <link rel="stylesheet" href="../css/modern-theme.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+    <div class="container">
+        <header class="modern-header">
+            <div class="header-container">
+                <a href="../index.html" class="logo">
+                    <div class="logo-icon">AD</div>
+                    <div class="logo-text">
+                        <span class="logo-title">Áudio Digital</span>
+                        <span class="logo-subtitle">Sistemas Multimídia</span>
+                    </div>
+                </a>
+                <nav class="main-nav" id="mainNav">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="fundamentos.html" class="nav-link">Fundamentos</a>
+                    <a href="digitalizacao.html" class="nav-link">Digitalização</a>
+                    <a href="formatos.html" class="nav-link">Formatos</a>
+                    <a href="pratica.html" class="nav-link">Prática</a>
+                    <a href="aplicacoes.html" class="nav-link active">Aplicações</a>
+                    <a href="quiz.html" class="nav-link">Quiz</a>
+                </nav>
+                <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+            </div>
+        </header>
+        <div class="page-header">
+            <h1 class="page-title">Aplicações do Áudio Digital</h1>
+            <p class="page-subtitle">Áudio em games, cinema, streaming e IA</p>
+        </div>
+
+        <section class="section active">
+            <div class="concept-card">
+                <h3>Áudio Digital em Games</h3>
+                
+                <div style="text-align: center; margin: 1.5rem 0;">
+                    <svg width="600" height="250" viewBox="0 0 600 250" style="max-width: 100%; border: 2px solid #e5e7eb; border-radius: 8px; background: #f9fafb;">
+                        <!-- Jogador no centro -->
+                        <circle cx="300" cy="125" r="30" fill="#3b82f6" opacity="0.3"/>
+                        <circle cx="300" cy="125" r="20" fill="#3b82f6"/>
+                        <text x="300" y="132" font-size="20" fill="white" text-anchor="middle">🎮</text>
+                        <text x="300" y="170" font-size="11" fill="white" text-anchor="middle" font-weight="600">Jogador</text>
+                        
+                        <!-- Som da frente -->
+                        <g>
+                            <circle cx="300" cy="40" r="15" fill="#ef4444"/>
+                            <path d="M 300 55 Q 300 80, 300 105" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,5"/>
+                            <text x="300" y="28" font-size="10" fill="#991b1b" text-anchor="middle" font-weight="600">🔊 Inimigo</text>
+                        </g>
+                        
+                        <!-- Som da direita -->
+                        <g>
+                            <circle cx="480" cy="125" r="15" fill="#10b981"/>
+                            <path d="M 465 125 Q 400 125, 320 125" stroke="#10b981" stroke-width="2" stroke-dasharray="5,5"/>
+                            <text x="480" y="155" font-size="10" fill="#065f46" text-anchor="middle" font-weight="600">💰 Moeda</text>
+                        </g>
+                        
+                        <!-- Som da esquerda -->
+                        <g>
+                            <circle cx="120" cy="125" r="15" fill="#f59e0b"/>
+                            <path d="M 135 125 Q 200 125, 280 125" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,5"/>
+                            <text x="120" y="155" font-size="10" fill="#92400e" text-anchor="middle" font-weight="600">🔥 Fogo</text>
+                        </g>
+                        
+                        <!-- Som de trás -->
+                        <g>
+                            <circle cx="300" cy="210" r="15" fill="#8b5cf6"/>
+                            <path d="M 300 195 Q 300 170, 300 145" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,5"/>
+                            <text x="300" y="235" font-size="10" fill="#5b21b6" text-anchor="middle" font-weight="600">💨 Vento</text>
+                        </g>
+                        
+                        <!-- Ondas sonoras do jogador (headphones) -->
+                        <circle cx="300" cy="125" r="50" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.3"/>
+                        <circle cx="300" cy="125" r="60" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.2"/>
+                        
+                        <!-- Legenda -->
+                        <text x="300" y="20" font-size="13" fill="#374151" text-anchor="middle" font-weight="bold">Áudio Espacial 3D - Sons Posicionados no Espaço</text>
+                    </svg>
+                </div>
+                
+                <p>A indústria de games é uma das maiores consumidoras de tecnologia de áudio digital. Jogos modernos utilizam áudio espacial 3D, síntese em tempo real e processamento de efeitos para criar experiências imersivas.</p>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; margin-bottom: 15px;">Desafios Técnicos em Games:</h4>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li><strong>Latência Ultra-Baixa:</strong> Áudio deve estar sincronizado com ações do jogador (&lt; 20ms)</li>
+                        <li><strong>Processamento em Tempo Real:</strong> Efeitos como reverb e oclusão devem ser calculados instantaneamente</li>
+                        <li><strong>Áudio 3D:</strong> Posicionamento preciso de sons no espaço tridimensional usando HRTF (Head-Related Transfer Function)</li>
+                        <li><strong>Otimização de Memória:</strong> Jogos podem ter milhares de sons, exigindo compressão eficiente</li>
+                        <li><strong>Síntese Procedural:</strong> Geração de sons dinamicamente baseada em parâmetros do jogo</li>
+                    </ul>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <p><strong>Formato Popular em Games:</strong> OGG Vorbis é amplamente usado porque é open source, tem boa compressão e suporta looping sem falhas. Engines como Unity e Unreal preferem OGG para música de fundo e efeitos menos críticos.</p>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Áudio Digital em Cinema e Televisão</h3>
+                <p>A produção audiovisual profissional exige os mais altos padrões de qualidade de áudio. Cada etapa da produção tem requisitos específicos:</p>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; margin-bottom: 15px;">Pipeline de Produção:</h4>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li><strong>Gravação no Set:</strong> 24-bit/48kHz (padrão cinema), gravadores portáteis com múltiplos canais</li>
+                        <li><strong>Edição e Pós-Produção:</strong> 24-bit/48kHz ou 96kHz, uso de DAWs profissionais (Pro Tools, Nuendo)</li>
+                        <li><strong>Sound Design:</strong> Criação e manipulação de efeitos sonoros, foley, ambientes</li>
+                        <li><strong>Mixagem:</strong> Combinação de diálogos, música e efeitos em múltiplos canais (5.1, 7.1, Atmos)</li>
+                        <li><strong>Masterização:</strong> Preparação final para diferentes formatos de distribuição</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; margin-bottom: 15px;">Formatos de Áudio Surround:</h4>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li><strong>Stereo 2.0:</strong> Esquerdo e direito - TV tradicional</li>
+                        <li><strong>5.1:</strong> L, R, C, LFE, LS, RS - DVD, Blu-ray padrão</li>
+                        <li><strong>7.1:</strong> Adiciona canais laterais traseiros - Blu-ray premium</li>
+                        <li><strong>Dolby Atmos:</strong> Áudio baseado em objetos, canais de altura - Cinema moderno</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Streaming de Áudio e Música</h3>
+                <p>Plataformas de streaming revolucionaram como consumimos música, exigindo compressão eficiente mantendo qualidade perceptível:</p>
+
+                <div style="background: #f9fafb; padding: 25px; border-radius: 8px; margin: 20px 0; border: 2px solid #e5e5e5;">
+                    <h4 style="color: #2d3748; margin-bottom: 15px;">Configurações de Streaming por Plataforma:</h4>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li><strong>Spotify:</strong> 320 kbps (Premium) ou 160 kbps (Free) - OGG Vorbis</li>
+                        <li><strong>Apple Music:</strong> 256 kbps AAC - Considerado equivalente a 320 kbps MP3</li>
+                        <li><strong>YouTube Music:</strong> 256 kbps AAC para vídeo, 128 kbps para áudio</li>
+                        <li><strong>Tidal HiFi:</strong> FLAC 1411 kbps (CD quality lossless)</li>
+                        <li><strong>Amazon Music HD:</strong> Até 24-bit/192kHz FLAC (Ultra HD)</li>
+                    </ul>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <p><strong>Streaming Adaptativo:</strong> Serviços modernos ajustam automaticamente o bitrate baseado na velocidade da internet do usuário. Começam com baixa qualidade e aumentam conforme o buffer é preenchido.</p>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Animação: Equalização de Frequências</h3>
+                <p style="margin-bottom: 20px;">Visualize como diferentes bandas de frequência se comportam em um equalizador digital. Esta animação representa como o áudio é dividido e processado em produção profissional.</p>
+                <div style="background: #1a202c; padding: 40px; border-radius: 12px; margin: 20px 0;">
+                    <div id="equalizerAnimation" style="display: flex; justify-content: space-around; align-items: flex-end; height: 200px;">
+                        <!-- Barras do equalizador -->
+                        <div class="eq-bar" data-freq="low" style="width: 30px; background: #e53e3e; border-radius: 4px 4px 0 0; transition: height 0.1s; height: 60px;"></div>
+                        <div class="eq-bar" data-freq="low-mid" style="width: 30px; background: #f59e0b; border-radius: 4px 4px 0 0; transition: height 0.1s; height: 100px;"></div>
+                        <div class="eq-bar" data-freq="mid" style="width: 30px; background: #fbbf24; border-radius: 4px 4px 0 0; transition: height 0.1s; height: 140px;"></div>
+                        <div class="eq-bar" data-freq="mid-high" style="width: 30px; background: #38a169; border-radius: 4px 4px 0 0; transition: height 0.1s; height: 120px;"></div>
+                        <div class="eq-bar" data-freq="high" style="width: 30px; background: #3b82f6; border-radius: 4px 4px 0 0; transition: height 0.1s; height: 80px;"></div>
+                        <div class="eq-bar" data-freq="very-high" style="width: 30px; background: #8b5cf6; border-radius: 4px 4px 0 0; transition: height 0.1s; height: 50px;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-around; margin-top: 15px; color: white; font-size: 0.85em;">
+                        <span>60Hz</span>
+                        <span>250Hz</span>
+                        <span>1kHz</span>
+                        <span>4kHz</span>
+                        <span>8kHz</span>
+                        <span>16kHz</span>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button onclick="startEqualizerAnimation()" style="margin: 0 10px;">Iniciar Equalização</button>
+                    <button onclick="stopEqualizerAnimation()" style="margin: 0 10px;">Pausar</button>
+                </div>
+                <p style="text-align: center; color: #666; margin-top: 15px;">
+                    Animação em tempo real mostrando diferentes bandas de frequência
+                </p>
+
+                <div style="margin-top: 25px; background: #f9fafb; padding: 20px; border-radius: 8px; border: 2px solid #e5e5e5;">
+                    <h4 style="color: #2d3748; margin-bottom: 15px;">Significado das Frequências:</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>60-250 Hz (Graves):</strong> Bumbo, baixo, profundidade</li>
+                        <li><strong>250-1000 Hz (Médio-grave):</strong> Corpo de guitarras, voz masculina grave</li>
+                        <li><strong>1-4 kHz (Médios):</strong> Presença vocal, clareza</li>
+                        <li><strong>4-8 kHz (Médio-agudo):</strong> Definição, articulação</li>
+                        <li><strong>8-16 kHz (Agudos):</strong> Brilho, ar, pratos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Inteligência Artificial e Processamento de Áudio</h3>
+                <p>A IA está transformando o processamento de áudio digital, permitindo aplicações antes impossíveis:</p>
+
+                <ul style="margin-left: 20px; margin-top: 20px; line-height: 2;">
+                    <li><strong>Reconhecimento de Voz:</strong> Assistentes virtuais (Alexa, Siri, Google Assistant) usam deep learning para entender fala natural</li>
+                    <li><strong>Separação de Fontes:</strong> Algoritmos ML podem isolar vocais, instrumentos ou remover ruído de gravações</li>
+                    <li><strong>Síntese de Voz (TTS):</strong> Geração de fala natural a partir de texto usando redes neurais</li>
+                    <li><strong>Masterização Automática:</strong> IA analisa e ajusta níveis, EQ e compressão automaticamente</li>
+                    <li><strong>Classificação de Música:</strong> Identificação de gêneros, humor e similaridade para recomendações</li>
+                    <li><strong>Restauração de Áudio:</strong> Remoção inteligente de ruídos, clicks e artefatos de gravações antigas</li>
+                </ul>
+
+                <div class="info-box" style="margin-top: 25px;">
+                    <p><strong>Futuro:</strong> Modelos de IA generativa (como OpenAI Jukebox) já conseguem compor música original completa com instrumentos e vocais sintéticos indistinguíveis de gravações reais.</p>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>VoIP e Comunicações Digitais</h3>
+                <p>Voice over IP (VoIP) revolucionou as comunicações, mas traz desafios únicos para áudio digital:</p>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; margin-bottom: 15px;">Tecnologias Envolvidas:</h4>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li><strong>Codecs de Baixa Latência:</strong> Opus (usado no Discord, WhatsApp) oferece qualidade excelente com atraso mínimo</li>
+                        <li><strong>Cancelamento de Eco:</strong> Algoritmos removem o áudio do alto-falante do microfone</li>
+                        <li><strong>Supressão de Ruído:</strong> IA identifica e remove ruídos de fundo em tempo real</li>
+                        <li><strong>Packet Loss Concealment:</strong> Reconstrução de pacotes perdidos para evitar interrupções</li>
+                        <li><strong>Jitter Buffer:</strong> Compensação de variações no tempo de chegada dos pacotes</li>
+                    </ul>
+                </div>
+
+                <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0; border: 2px solid #e5e5e5;">
+                    <p><strong>Configurações Típicas de VoIP:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li><strong>Telefonia Básica:</strong> 8 kHz, Codec G.711 (64 kbps)</li>
+                        <li><strong>HD Voice:</strong> 16 kHz, Codec G.722 (64 kbps)</li>
+                        <li><strong>VoIP Moderno:</strong> 48 kHz, Opus (6-510 kbps adaptativo)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Workflows Profissionais: Produção Musical</h3>
+                <p>O processo completo de produção musical moderna envolve múltiplas etapas com requisitos técnicos específicos:</p>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Etapa 1: Pré-Produção</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Demos e sketches:</strong> Qualquer formato, foco em ideias</li>
+                        <li><strong>Planejamento técnico:</strong> Definir sample rate (48/96 kHz), buffer size, roteamento</li>
+                        <li><strong>Templates:</strong> Configurar sessões com rotas, plugins, efeitos padrão</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Etapa 2: Gravação (Tracking)</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Formato:</strong> WAV 24-bit/48kHz mínimo (96kHz para produção premium)</li>
+                        <li><strong>Headroom:</strong> Picos entre -6 e -3 dBFS para evitar clipping</li>
+                        <li><strong>Monitoramento:</strong> Latência < 10ms para performance confortável</li>
+                        <li><strong>Backup:</strong> Gravação redundante em múltiplos devices</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Etapa 3: Edição</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Comping:</strong> Seleção das melhores takes</li>
+                        <li><strong>Timing:</strong> Ajustes de tempo (elastic audio, time-stretching)</li>
+                        <li><strong>Afinamento:</strong> Correção de pitch se necessário</li>
+                        <li><strong>Limpeza:</strong> Remoção de ruídos, clicks, respirações indesejadas</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Etapa 4: Mixagem</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Balanceamento:</strong> Níveis relativos entre instrumentos</li>
+                        <li><strong>Equalização:</strong> Ajuste de frequências para clareza e separação</li>
+                        <li><strong>Compressão:</strong> Controle de dinâmica</li>
+                        <li><strong>Espacialização:</strong> Panoração, reverb, delay</li>
+                        <li><strong>Automação:</strong> Mudanças dinâmicas ao longo da música</li>
+                        <li><strong>Export:</strong> Stems individuais + mix master em 24-bit</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Etapa 5: Masterização</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>EQ Master:</strong> Ajustes finais de balanço tonal</li>
+                        <li><strong>Compressão Multibanda:</strong> Controle de dinâmica por faixa de frequência</li>
+                        <li><strong>Limitador:</strong> Maximização de volume (cuidado com loudness war)</li>
+                        <li><strong>Dithering:</strong> Ao converter 24-bit para 16-bit</li>
+                        <li><strong>Formatos finais:</strong> WAV 16/44.1 (CD), FLAC (streaming hi-res), MP3/AAC (streaming padrão)</li>
+                    </ul>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <p><strong>Padrões de Loudness:</strong> Serviços de streaming normalizam volume automaticamente. Spotify: -14 LUFS, YouTube: -13 LUFS, Apple Music: -16 LUFS. Masterizar muito alto não traz vantagem e pode degradar qualidade.</p>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Especificações Técnicas por Indústria</h3>
+                
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Cinema e Televisão:</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Cinema DCI:</strong> 24-bit/48kHz, formatos 5.1, 7.1 ou Atmos</li>
+                        <li><strong>Broadcast TV:</strong> 24-bit/48kHz, -23 LUFS (EBU R128) ou -24 LUFS (ATSC A/85)</li>
+                        <li><strong>Netflix/Streaming:</strong> 24-bit/48kHz, -27 LUFS, 5.1 ou Atmos</li>
+                        <li><strong>Sincronização:</strong> Frame-accurate, timecode SMPTE</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Rádio e Podcast:</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Rádio FM:</strong> 16-bit/44.1kHz, processamento pesado de dinâmica</li>
+                        <li><strong>Rádio Digital (DAB):</strong> AAC+ ou MP2, 128-192 kbps</li>
+                        <li><strong>Podcast:</strong> MP3 128-192 kbps mono/estéreo, -16 LUFS recomendado</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Games (AAA):</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Música:</strong> OGG Vorbis ou AAC, 128-256 kbps, looping seamless</li>
+                        <li><strong>SFX:</strong> WAV 16-bit/44.1kHz, comprimido em runtime</li>
+                        <li><strong>Diálogos:</strong> Comprimido (plataforma específica), localizado</li>
+                        <li><strong>Áudio 3D:</strong> HRTF, occlusion, reverberação dinâmica</li>
+                        <li><strong>Middleware:</strong> Wwise, FMOD para implementação adaptativa</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Realidade Virtual (VR):</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Formato:</strong> Ambisonics (primeira ordem mínimo, terceira ordem ideal)</li>
+                        <li><strong>Latência:</strong> < 20ms total (motion-to-photon + áudio)</li>
+                        <li><strong>Espacialização:</strong> HRTF binaural para fones, decodificação para speakers</li>
+                        <li><strong>Head tracking:</strong> Atualização de áudio sincronizada com movimento</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Tendências e Futuro do Áudio Digital</h3>
+                <p>A tecnologia de áudio continua evoluindo rapidamente. Principais tendências:</p>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Áudio Imersivo:</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Atmos e 360RA:</strong> Áudio baseado em objetos, não em canais</li>
+                        <li><strong>Espacial Audio:</strong> Apple Music e streaming adotando formatos imersivos</li>
+                        <li><strong>Binauralização:</strong> Conversão de multicanal para fones mantendo espacialidade</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Inteligência Artificial:</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Separação de Fontes:</strong> Isolamento perfeito de instrumentos e vozes</li>
+                        <li><strong>Síntese Neural:</strong> Geração de áudio realista por IA</li>
+                        <li><strong>Masterização Automática:</strong> Ferramentas como LANDR, eMastered</li>
+                        <li><strong>Restauração:</strong> Limpeza e aprimoramento de gravações antigas</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Novos Formatos:</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>MQA:</strong> Áudio de alta resolução compacto (controverso)</li>
+                        <li><strong>LC3/LC3plus:</strong> Sucessor do SBC para Bluetooth</li>
+                        <li><strong>MPEG-H:</strong> Codec de próxima geração para broadcast</li>
+                    </ul>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <p><strong>Desafios Futuros:</strong> Balançar qualidade crescente com limitações de banda (streaming). Padronizar formatos imersivos. Democratizar ferramentas profissionais. Preservar gravações em formatos que permanecerão acessíveis por décadas.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div style="text-align: center; margin-bottom: 1rem;">
+                <button id="bgMusicBtn" onclick="playBackgroundMusic()" style="background: #2563eb; border: 2px solid #2563eb; color: white; padding: 0.5rem 1.25rem; border-radius: 25px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; transition: all 0.3s;">
+                    <span id="musicIcon">▶</span>
+                    <span id="musicText">Tocar Música Ambiente</span>
+                </button>
+                <span id="musicStatus" style="display: block; color: rgba(255,255,255,0.7); font-size: 0.875rem; margin-top: 0.5rem; min-height: 20px;"></span>
+            </div>
+            <p>Protótipo Educacional - Áudio Digital para Sistemas Multimídia</p>
+            <p style="margin-top: 10px;">Desenvolvido com HTML, CSS e JavaScript + Web Audio API</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript para Animações -->
+    <script src="../js/navigation.js"></script>
+    <script src="../js/background-music.js"></script>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

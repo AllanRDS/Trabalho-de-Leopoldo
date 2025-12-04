@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processo de Digitalização</title>
+
+    <link rel="stylesheet" href="../css/modern-theme.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+    <div class="container">
+        <header class="modern-header">
+            <div class="header-container">
+                <a href="../index.html" class="logo">
+                    <div class="logo-icon">AD</div>
+                    <div class="logo-text">
+                        <span class="logo-title">Áudio Digital</span>
+                        <span class="logo-subtitle">Sistemas Multimídia</span>
+                    </div>
+                </a>
+                <nav class="main-nav" id="mainNav">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="fundamentos.html" class="nav-link">Fundamentos</a>
+                    <a href="digitalizacao.html" class="nav-link active">Digitalização</a>
+                    <a href="formatos.html" class="nav-link">Formatos</a>
+                    <a href="pratica.html" class="nav-link">Prática</a>
+                    <a href="aplicacoes.html" class="nav-link">Aplicações</a>
+                    <a href="quiz.html" class="nav-link">Quiz</a>
+                </nav>
+                <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+            </div>
+        </header>
+        <div class="page-header">
+            <h1 class="page-title">Processo de Digitalização</h1>
+            <p class="page-subtitle">Cadeia completa de conversão analógico-digital</p>
+        </div>
+
+        <section class="section active">
+            <div class="concept-card">
+                <h3>Cadeia de Conversão Analógico-Digital</h3>
+                
+                <div style="text-align: center; margin: 1.5rem 0;">
+                    <svg width="700" height="200" viewBox="0 0 700 200" style="max-width: 100%; border: 2px solid #e5e7eb; border-radius: 8px; background: #f9fafb;">
+                        <!-- Ondas sonoras -->
+                        <g>
+                            <path d="M 20 100 Q 30 80, 40 100 T 60 100" stroke="#f59e0b" stroke-width="2" fill="none"/>
+                            <text x="40" y="140" font-size="11" fill="#374151" text-anchor="middle" font-weight="600">Som</text>
+                        </g>
+                        
+                        <!-- Seta 1 -->
+                        <path d="M 70 100 L 95 100" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+                        
+                        <!-- Microfone -->
+                        <g>
+                            <circle cx="110" cy="100" r="20" fill="#3b82f6" opacity="0.3"/>
+                            <rect x="105" y="90" width="10" height="20" fill="#3b82f6" rx="5"/>
+                            <line x1="110" y1="110" x2="110" y2="120" stroke="#3b82f6" stroke-width="2"/>
+                            <text x="110" y="145" font-size="10" fill="#1e40af" text-anchor="middle" font-weight="600">Microfone</text>
+                        </g>
+                        
+                        <!-- Seta 2 -->
+                        <path d="M 135 100 L 165 100" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+                        <text x="150" y="92" font-size="9" fill="#64748b" text-anchor="middle">Sinal</text>
+                        <text x="150" y="120" font-size="9" fill="#64748b" text-anchor="middle">Elétrico</text>
+                        
+                        <!-- Pré-amp -->
+                        <g>
+                            <rect x="165" y="85" width="50" height="30" fill="#2563eb" rx="3"/>
+                            <text x="190" y="105" font-size="10" fill="white" text-anchor="middle" font-weight="600">PRÉ-AMP</text>
+                            <text x="190" y="145" font-size="10" fill="#1e40af" text-anchor="middle" font-weight="600">Amplificação</text>
+                        </g>
+                        
+                        <!-- Seta 3 -->
+                        <path d="M 220 100 L 250 100" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+                        
+                        <!-- Filtro -->
+                        <g>
+                            <polygon points="250,85 270,100 250,115" fill="#10b981" opacity="0.7"/>
+                            <line x1="250" y1="85" x2="250" y2="115" stroke="#10b981" stroke-width="3"/>
+                            <text x="260" y="145" font-size="10" fill="white" text-anchor="middle" font-weight="600">Filtro</text>
+                        </g>
+                        
+                        <!-- Seta 4 -->
+                        <path d="M 280 100 L 315 100" stroke="white" stroke-width="2" marker-end="url(#arrow)"/>
+                        
+                        <!-- ADC (maior destaque) -->
+                        <g>
+                            <rect x="315" y="70" width="70" height="60" fill="#ef4444" rx="5"/>
+                            <text x="350" y="92" font-size="12" fill="white" text-anchor="middle" font-weight="bold">ADC</text>
+                            <text x="350" y="107" font-size="9" fill="white" text-anchor="middle">Amostragem</text>
+                            <text x="350" y="120" font-size="9" fill="white" text-anchor="middle">+</text>
+                            <text x="350" y="133" font-size="9" fill="white" text-anchor="middle">Quantização</text>
+                            <text x="350" y="155" font-size="10" fill="#b91c1c" text-anchor="middle" font-weight="600">Conversão A/D</text>
+                        </g>
+                        
+                        <!-- Seta 5 -->
+                        <path d="M 390 100 L 425 100" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+                        <text x="407" y="92" font-size="9" fill="#64748b" text-anchor="middle">Dados</text>
+                        <text x="407" y="120" font-size="9" fill="#64748b" text-anchor="middle">Digitais</text>
+                        
+                        <!-- Buffer/Memória -->
+                        <g>
+                            <rect x="425" y="85" width="50" height="30" fill="#06b6d4" rx="3"/>
+                            <rect x="432" y="92" width="10" height="16" fill="white" opacity="0.8"/>
+                            <rect x="445" y="92" width="10" height="16" fill="white" opacity="0.6"/>
+                            <rect x="458" y="92" width="10" height="16" fill="white" opacity="0.4"/>
+                            <text x="450" y="145" font-size="10" fill="white" text-anchor="middle" font-weight="600">Buffer</text>
+                        </g>
+                        
+                        <!-- Seta 6 -->
+                        <path d="M 480 100 L 515 100" stroke="white" stroke-width="2" marker-end="url(#arrow)"/>
+                        
+                        <!-- Processamento -->
+                        <g>
+                            <rect x="515" y="80" width="60" height="40" fill="#14b8a6" rx="5"/>
+                            <circle cx="535" cy="100" r="8" fill="white" opacity="0.3"/>
+                            <circle cx="555" cy="100" r="8" fill="white" opacity="0.3"/>
+                            <path d="M 525 95 L 565 105" stroke="white" stroke-width="2"/>
+                            <path d="M 525 105 L 565 95" stroke="white" stroke-width="2"/>
+                            <text x="545" y="145" font-size="10" fill="white" text-anchor="middle" font-weight="600">DSP</text>
+                        </g>
+                        
+                        <!-- Seta 7 -->
+                        <path d="M 580 100 L 615 100" stroke="white" stroke-width="2" marker-end="url(#arrow)"/>
+                        
+                        <!-- Armazenamento -->
+                        <g>
+                            <rect x="615" y="75" width="70" height="50" fill="#f59e0b" rx="5"/>
+                            <circle cx="650" cy="95" r="12" fill="white" opacity="0.3"/>
+                            <circle cx="650" cy="95" r="8" fill="white" opacity="0.5"/>
+                            <circle cx="650" cy="95" r="3" fill="white"/>
+                            <text x="650" y="118" font-size="9" fill="white" text-anchor="middle" font-weight="600">WAV/MP3</text>
+                            <text x="650" y="150" font-size="10" fill="#92400e" text-anchor="middle" font-weight="600">Arquivo</text>
+                        </g>
+                        
+                        <!-- Título -->
+                        <text x="350" y="25" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Fluxo Completo de Digitalização de Áudio</text>
+                        
+                        <!-- Definição de seta -->
+                        <defs>
+                            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                <polygon points="0 0, 10 3, 0 6" fill="#6b7280"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                </div>
+                
+                <p>A digitalização de áudio é um processo complexo que envolve várias etapas técnicas. Compreender cada uma delas é fundamental para trabalhar com áudio digital de forma profissional.</p>
+
+                <div style="margin-top: 30px;">
+                    <h4 style="color: #2d3748; font-size: 1.3em; margin-bottom: 15px;">Etapa 1: Transdução Acústica</h4>
+                    <p>O microfone converte energia acústica (ondas sonoras no ar) em energia elétrica (sinais de voltagem). Diferentes tipos de microfones têm características diferentes:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li><strong>Microfones Dinâmicos:</strong> Usam uma bobina móvel e ímã. Robustos, ideais para palco e instrumentos altos</li>
+                        <li><strong>Microfones Condensadores:</strong> Usam placas capacitivas. Mais sensíveis e precisos, ideais para estúdio</li>
+                        <li><strong>Microfones de Fita:</strong> Usam uma fita metálica fina. Som vintage e suave</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h4 style="color: #2d3748; font-size: 1.3em; margin-bottom: 15px;">Etapa 2: Pré-amplificação</h4>
+                    <p>O sinal do microfone é muito fraco (nível de milivolt) e precisa ser amplificado para nível de linha (~1 volt) antes da conversão digital. O pré-amplificador também pode aplicar:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li><strong>Phantom Power:</strong> +48V necessário para microfones condensadores</li>
+                        <li><strong>Filtros:</strong> Corte de graves para remover ruídos de baixa frequência</li>
+                        <li><strong>Pad:</strong> Atenuação para fontes muito altas</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h4 style="color: #2d3748; font-size: 1.3em; margin-bottom: 15px;">Etapa 3: Filtro Anti-Aliasing</h4>
+                    <p>Antes da conversão digital, o sinal passa por um filtro passa-baixas que remove frequências acima da metade da taxa de amostragem. Isso previne o aliasing - um fenômeno onde frequências altas são erroneamente representadas como frequências baixas no domínio digital.</p>
+
+                    <div class="info-box" style="margin-top: 15px;">
+                        <p><strong>O que é Aliasing?</strong></p>
+                        <p style="margin-top: 10px;">Imagine que você está tentando fotografar uma roda girando rapidamente. Se sua câmera tira poucas fotos por segundo, a roda pode parecer girar para trás ou em velocidade diferente da real. O mesmo acontece com áudio digital - se tentarmos capturar frequências muito altas com taxa de amostragem baixa, elas aparecem como frequências falsas.</p>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 1.5rem; padding: 1.5rem; background: #f9fafb; border: 2px solid #e5e7eb; border-radius: 8px;">
+                        <canvas id="aliasingCanvas" width="600" height="200" style="max-width: 100%; border: 1px solid #d1d5db; background: white;"></canvas>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h4 style="color: #2d3748; font-size: 1.3em; margin-bottom: 15px;">Etapa 4: Amostragem</h4>
+                    <p>O conversor analógico-digital (ADC) mede a voltagem do sinal em intervalos regulares determinados pela taxa de amostragem. A cada medição, um valor numérico é gerado. Este é o momento crucial onde o sinal contínuo se torna discreto.</p>
+
+                    <p style="margin-top: 15px;"><strong>Processo de Amostragem:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li>Um clock preciso dispara as medições em intervalos exatos</li>
+                        <li>Um circuito sample-and-hold "congela" o valor da voltagem</li>
+                        <li>O ADC converte esse valor em um número binário</li>
+                        <li>O processo se repete milhares de vezes por segundo</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h4 style="color: #2d3748; font-size: 1.3em; margin-bottom: 15px;">Etapa 5: Quantização</h4>
+                    <p>Cada amostra é arredondada para o nível digital mais próximo dentro da resolução de bits disponível. Por exemplo, com 16 bits, cada amostra pode ter um de 65.536 valores possíveis entre o mínimo e o máximo.</p>
+
+                    <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0; border: 2px solid #e5e5e5;">
+                        <p><strong>Exemplo Numérico:</strong></p>
+                        <p style="margin-top: 10px;">Se o sinal original está em 0,7532 volts e nosso sistema usa 16 bits:</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>O ADC encontra o valor digital mais próximo (ex: nível 24.567 de 65.536)</li>
+                            <li>A diferença entre o valor real e o arredondado é o erro de quantização</li>
+                            <li>Com 16 bits, esse erro é tão pequeno que é inaudível</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h4 style="color: #2d3748; font-size: 1.3em; margin-bottom: 15px;">Etapa 6: Armazenamento e Codificação</h4>
+                    <p>Os dados digitais são organizados e armazenados em um formato de arquivo. Dependendo do formato escolhido, podem ser aplicados:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li><strong>Sem compressão (WAV, AIFF):</strong> Os dados são armazenados exatamente como foram capturados</li>
+                        <li><strong>Compressão sem perda (FLAC, ALAC):</strong> Os dados são comprimidos mas podem ser restaurados perfeitamente</li>
+                        <li><strong>Compressão com perda (MP3, AAC):</strong> Remove informações consideradas menos importantes para reduzir tamanho</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Tipos de Conversores ADC</h3>
+                <p>Existem diferentes arquiteturas de conversores analógico-digitais, cada uma com características específicas para diferentes aplicações:</p>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">1. ADC Sigma-Delta</h4>
+                    <p>O tipo mais comum em áudio profissional. Usa oversampling (amostragem muito acima da taxa final) e noise shaping para obter alta resolução:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li><strong>Vantagens:</strong> Alta resolução (24-bit), baixo ruído, linearidade excelente</li>
+                        <li><strong>Desvantagens:</strong> Latência moderada devido ao oversampling</li>
+                        <li><strong>Uso:</strong> Interfaces de áudio profissionais, gravadores digitais</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">2. ADC Sucessivas Aproximações (SAR)</h4>
+                    <p>Converte usando um algoritmo de busca binária, testando cada bit sequencialmente:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li><strong>Vantagens:</strong> Latência muito baixa, menor consumo de energia</li>
+                        <li><strong>Desvantagens:</strong> Resolução limitada (geralmente 12-16 bits)</li>
+                        <li><strong>Uso:</strong> Sistemas embarcados, controle em tempo real</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">3. ADC Pipeline</h4>
+                    <p>Processa várias amostras simultaneamente em estágios diferentes:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li><strong>Vantagens:</strong> Alta velocidade de amostragem</li>
+                        <li><strong>Desvantagens:</strong> Maior consumo de energia, complexidade</li>
+                        <li><strong>Uso:</strong> Osciladores digitais, instrumentação de alta velocidade</li>
+                    </ul>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <p><strong>Especificações Técnicas Importantes:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.6;">
+                        <li><strong>SNR (Signal-to-Noise Ratio):</strong> Relação sinal-ruído, quanto maior melhor</li>
+                        <li><strong>THD (Total Harmonic Distortion):</strong> Distorção harmônica total, deve ser baixa</li>
+                        <li><strong>ENOB (Effective Number of Bits):</strong> Bits efetivos considerando ruído real</li>
+                        <li><strong>Latência:</strong> Atraso entre entrada analógica e saída digital</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Jitter e Clock: A Importância da Precisão Temporal</h3>
+                <p>O jitter é a variação indesejada no tempo de amostragem. Mesmo pequenas imprecisões no clock podem degradar significativamente a qualidade do áudio:</p>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">O que causa Jitter?</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li>Instabilidade do oscilador de clock</li>
+                        <li>Interferência eletromagnética</li>
+                        <li>Ruído na fonte de alimentação</li>
+                        <li>Problemas na transmissão digital (cabos, conectores)</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Impacto no Áudio:</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Baixo jitter (< 10 ps):</strong> Inaudível, qualidade profissional</li>
+                        <li><strong>Jitter moderado (10-100 ps):</strong> Pode afetar imagem estéreo e detalhes</li>
+                        <li><strong>Alto jitter (> 100 ps):</strong> Distorção audível, perda de clareza</li>
+                    </ul>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <p><strong>Soluções Profissionais:</strong> Interfaces de alta qualidade usam clocks de precisão (word clock), isolamento galvânico e reclocagem de sinais digitais para minimizar jitter. Em estúdios profissionais, um master clock externo sincroniza todos os equipamentos.</p>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Erros Comuns na Digitalização</h3>
+                <p>Compreender e evitar erros comuns é fundamental para obter resultados de qualidade:</p>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">1. Clipping (Sobrecarga Digital)</h4>
+                    <p>Ocorre quando o nível de entrada excede 0 dBFS (Full Scale). Diferente de clipping analógico, o digital produz distorção dura e desagradável:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li><strong>Prevenção:</strong> Deixe headroom de 3-6 dB ao gravar</li>
+                        <li><strong>Monitoramento:</strong> Use medidores de pico, não apenas VU</li>
+                        <li><strong>Recuperação:</strong> Clipping digital é irreversível, previna sempre</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">2. Taxa de Amostragem Inadequada</h4>
+                    <p>Usar taxa muito baixa para o conteúdo resulta em aliasing:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li><strong>Problema:</strong> Frequências acima de Nyquist aparecem como artefatos</li>
+                        <li><strong>Solução:</strong> Use filtro anti-aliasing adequado e taxa apropriada</li>
+                        <li><strong>Regra:</strong> 44.1/48 kHz para música geral, 96 kHz para produção profissional</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">3. Profundidade de Bits Insuficiente</h4>
+                    <p>Usar 8 bits resulta em ruído de quantização audível:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li><strong>Mínimo aceitável:</strong> 16 bits para distribuição final</li>
+                        <li><strong>Recomendado:</strong> 24 bits para gravação e produção</li>
+                        <li><strong>32-bit float:</strong> Para processamento interno em DAWs</li>
+                    </ul>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <p><strong>Regra de Ouro:</strong> Sempre grave com qualidade superior à necessária para distribuição final. É fácil reduzir qualidade depois (downsampling), mas impossível recuperar qualidade perdida na origem.</p>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Animação: Propagação de Ondas Sonoras</h3>
+                <p style="margin-bottom: 20px;">Visualize como as ondas sonoras se propagam no ar antes de serem capturadas pelo microfone. Esta animação matricial (Canvas) demonstra o comportamento físico do som.</p>
+                <div id="waveAnimation" style="width: 100%; height: 300px; background: #f0f9ff; border-radius: 12px; position: relative; overflow: hidden; margin: 20px 0; border: 2px solid #3b82f6;">
+                    <canvas id="soundWaveCanvas" style="width: 100%; height: 100%;"></canvas>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button onclick="startWaveAnimation()" style="margin: 0 10px;">Iniciar Animação</button>
+                    <button onclick="stopWaveAnimation()" style="margin: 0 10px;">Pausar</button>
+                    <button onclick="resetWaveAnimation()" style="margin: 0 10px;">Reiniciar</button>
+                </div>
+                <p style="text-align: center; color: #666; margin-top: 15px;">
+                    Veja como as ondas sonoras se propagam no ar em diferentes frequências
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <h3>Animação: Processo de Amostragem em Tempo Real</h3>
+                <p style="margin-bottom: 20px;">Esta animação interativa demonstra visualmente como funciona o processo de amostragem - convertendo uma onda contínua em pontos discretos.</p>
+                <div id="samplingAnimation" style="width: 100%; height: 300px; background: #fef3c7; border-radius: 12px; position: relative; overflow: hidden; margin: 20px 0; border: 2px solid #f59e0b;">
+                    <canvas id="samplingCanvas" style="width: 100%; height: 100%;"></canvas>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button onclick="startSamplingAnimation()" style="margin: 0 10px;">Iniciar Amostragem</button>
+                    <button onclick="stopSamplingAnimation()" style="margin: 0 10px;">Pausar</button>
+                    <div style="margin-top: 15px;">
+                        <label style="font-weight: 600; margin-right: 10px;">Taxa de Amostragem:</label>
+                        <select id="sampleRateSelect" onchange="changeSampleRate()" style="margin-left: 10px; padding: 8px; border-radius: 6px; border: 2px solid #e2e8f0;">
+                            <option value="low">Baixa (8 kHz) - Telefone</option>
+                            <option value="medium" selected>Média (44.1 kHz) - CD</option>
+                            <option value="high">Alta (96 kHz) - Hi-Res</option>
+                        </select>
+                    </div>
+                </div>
+                <p style="text-align: center; color: #666; margin-top: 15px;">
+                    Observe como mais amostras por segundo resultam em melhor representação da onda original
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <h3>Ondas Sonoras: Analógico vs Digital (SVG Vetorial)</h3>
+                <p style="margin-bottom: 20px;">Diagrama vetorial mostrando a diferença fundamental entre sinal analógico contínuo e sinal digital discreto.</p>
+                <div style="text-align: center; margin: 30px 0;">
+                    <svg width="100%" height="300" viewBox="0 0 800 300" style="max-width: 800px; margin: 0 auto; display: block;">
+                        <!-- Onda Analógica -->
+                        <text x="100" y="30" font-size="18" font-weight="bold" fill="#667eea">Analógico (Contínuo)</text>
+                        <path d="M 50 150 Q 100 80 150 150 T 250 150 Q 300 220 350 150"
+                              stroke="#667eea" stroke-width="3" fill="none"/>
+
+                        <!-- Onda Digital -->
+                        <text x="500" y="30" font-size="18" font-weight="bold" fill="#38a169">Digital (Discreto)</text>
+                        <path d="M 450 150 Q 500 80 550 150 T 650 150 Q 700 220 750 150"
+                              stroke="#cbd5e0" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+
+                        <!-- Pontos de amostragem -->
+                        <circle cx="450" cy="150" r="5" fill="#38a169"/>
+                        <circle cx="475" cy="120" r="5" fill="#38a169"/>
+                        <circle cx="500" cy="80" r="5" fill="#38a169"/>
+                        <circle cx="525" cy="90" r="5" fill="#38a169"/>
+                        <circle cx="550" cy="150" r="5" fill="#38a169"/>
+                        <circle cx="575" cy="210" r="5" fill="#38a169"/>
+                        <circle cx="600" cy="230" r="5" fill="#38a169"/>
+                        <circle cx="625" cy="200" r="5" fill="#38a169"/>
+                        <circle cx="650" cy="150" r="5" fill="#38a169"/>
+                        <circle cx="675" cy="120" r="5" fill="#38a169"/>
+                        <circle cx="700" cy="110" r="5" fill="#38a169"/>
+                        <circle cx="725" cy="140" r="5" fill="#38a169"/>
+                        <circle cx="750" cy="150" r="5" fill="#38a169"/>
+
+                        <!-- Linhas conectando amostras -->
+                        <polyline points="450,150 475,120 500,80 525,90 550,150 575,210 600,230 625,200 650,150 675,120 700,110 725,140 750,150"
+                                  stroke="#38a169" stroke-width="2" fill="none"/>
+
+                        <!-- Legendas -->
+                        <text x="200" y="280" font-size="14" fill="#666" text-anchor="middle">Infinitos valores possíveis</text>
+                        <text x="600" y="280" font-size="14" fill="#666" text-anchor="middle">Valores discretos (amostras)</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div style="text-align: center; margin-bottom: 1rem;">
+                <button id="bgMusicBtn" onclick="playBackgroundMusic()" style="background: #2563eb; border: 2px solid #2563eb; color: white; padding: 0.5rem 1.25rem; border-radius: 25px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; transition: all 0.3s;">
+                    <span id="musicIcon">▶</span>
+                    <span id="musicText">Tocar Música Ambiente</span>
+                </button>
+                <span id="musicStatus" style="display: block; color: rgba(255,255,255,0.7); font-size: 0.875rem; margin-top: 0.5rem; min-height: 20px;"></span>
+            </div>
+            <p>Protótipo Educacional - Áudio Digital para Sistemas Multimídia</p>
+            <p style="margin-top: 10px;">Desenvolvido com HTML, CSS e JavaScript + Web Audio API</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript para Animações -->
+    <script src="../js/navigation.js"></script>
+    <script src="../js/background-music.js"></script>
+    <script src="../js/animations.js"></script>
+    <script>
+        // Canvas aliasing demonstration
+        const canvas = document.getElementById('aliasingCanvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+            const height = canvas.height;
+            
+            // Background
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, width, height);
+            
+            // Linha divisória
+            ctx.strokeStyle = '#d1d5db';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(width / 2, 0);
+            ctx.lineTo(width / 2, height);
+            ctx.stroke();
+            
+            // Lado esquerdo - Amostragem correta
+            ctx.fillStyle = '#10b981';
+            ctx.font = 'bold 12px sans-serif';
+            ctx.fillText('Amostragem Adequada ✓', 10, 20);
+            
+            ctx.strokeStyle = '#2563eb';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            const leftCenterY = height / 2;
+            for (let x = 10; x < width / 2 - 10; x++) {
+                const y = leftCenterY + Math.sin(x * 0.05) * 40;
+                if (x === 10) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+            ctx.stroke();
+            
+            // Pontos de amostragem corretos
+            ctx.fillStyle = '#10b981';
+            for (let x = 10; x < width / 2 - 10; x += 15) {
+                const y = leftCenterY + Math.sin(x * 0.05) * 40;
+                ctx.beginPath();
+                ctx.arc(x, y, 3, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            
+            // Lado direito - Aliasing
+            ctx.fillStyle = '#ef4444';
+            ctx.font = 'bold 12px sans-serif';
+            ctx.fillText('Aliasing (Taxa Baixa) ✗', width / 2 + 10, 20);
+            
+            // Onda original alta frequência
+            ctx.strokeStyle = '#9ca3af';
+            ctx.lineWidth = 1;
+            ctx.setLineDash([3, 3]);
+            ctx.beginPath();
+            const rightCenterY = height / 2;
+            for (let x = width / 2 + 10; x < width - 10; x++) {
+                const y = rightCenterY + Math.sin((x - width / 2) * 0.15) * 40;
+                if (x === width / 2 + 10) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+            ctx.stroke();
+            ctx.setLineDash([]);
+            
+            // Poucos pontos de amostragem causando aliasing
+            const samples = [];
+            for (let x = width / 2 + 10; x < width - 10; x += 50) {
+                const y = rightCenterY + Math.sin((x - width / 2) * 0.15) * 40;
+                samples.push({x, y});
+                ctx.fillStyle = '#ef4444';
+                ctx.beginPath();
+                ctx.arc(x, y, 3, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            
+            // Reconstrução incorreta (onda de baixa frequência)
+            ctx.strokeStyle = '#ef4444';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            samples.forEach((point, i) => {
+                if (i === 0) {
+                    ctx.moveTo(point.x, point.y);
+                } else {
+                    ctx.lineTo(point.x, point.y);
+                }
+            });
+            ctx.stroke();
+        }
+    </script>
+</body>
+</html>

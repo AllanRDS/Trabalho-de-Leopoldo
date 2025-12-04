@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 5 30 Q 15 10, 25 30 T 45 30 T 55 30" stroke="#2563eb" stroke-width="3" fill="none">
+        <animate attributeName="d" dur="2s" repeatCount="indefinite" 
+                 values="M 5 30 Q 15 10, 25 30 T 45 30 T 55 30;M 5 30 Q 15 50, 25 30 T 45 30 T 55 30;M 5 30 Q 15 10, 25 30 T 45 30 T 55 30"/>
+    </path>
+    <circle cx="15" cy="20" r="3" fill="#2563eb">
+        <animate attributeName="cy" dur="2s" repeatCount="indefinite" values="20;40;20"/>
+    </circle>
+    <circle cx="25" cy="30" r="3" fill="#2563eb"/>
+    <circle cx="35" cy="20" r="3" fill="#2563eb">
+        <animate attributeName="cy" dur="2s" repeatCount="indefinite" values="20;40;20"/>
+    </circle>
+    <circle cx="45" cy="30" r="3" fill="#2563eb"/>
+</svg>

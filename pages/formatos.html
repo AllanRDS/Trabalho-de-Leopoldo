@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatos de Áudio Digital</title>
+
+    <link rel="stylesheet" href="../css/modern-theme.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+    <div class="container">
+        <header class="modern-header">
+            <div class="header-container">
+                <a href="../index.html" class="logo">
+                    <div class="logo-icon">AD</div>
+                    <div class="logo-text">
+                        <span class="logo-title">Áudio Digital</span>
+                        <span class="logo-subtitle">Sistemas Multimídia</span>
+                    </div>
+                </a>
+                <nav class="main-nav" id="mainNav">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="fundamentos.html" class="nav-link">Fundamentos</a>
+                    <a href="digitalizacao.html" class="nav-link">Digitalização</a>
+                    <a href="formatos.html" class="nav-link active">Formatos</a>
+                    <a href="pratica.html" class="nav-link">Prática</a>
+                    <a href="aplicacoes.html" class="nav-link">Aplicações</a>
+                    <a href="quiz.html" class="nav-link">Quiz</a>
+                </nav>
+                <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+            </div>
+        </header>
+        <div class="page-header">
+            <h1 class="page-title">Formatos de Áudio Digital</h1>
+            <p class="page-subtitle">Compressão, qualidade e aplicações práticas</p>
+        </div>
+
+        <section class="section active">
+            <div class="concept-card">
+                <h3>Tipos de Formatos</h3>
+                
+                <div style="text-align: center; margin: 1.5rem 0;">
+                    <svg width="650" height="280" viewBox="0 0 650 280" style="max-width: 100%; border: 2px solid #e5e7eb; border-radius: 8px; background: #f9fafb;">
+                        <!-- WAV - Não comprimido -->
+                        <g>
+                            <rect x="30" y="80" width="140" height="140" fill="#dbeafe" stroke="#3b82f6" stroke-width="3" rx="8"/>
+                            <text x="100" y="40" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">WAV</text>
+                            <text x="100" y="60" font-size="11" fill="#3b82f6" text-anchor="middle">Não comprimido</text>
+                            
+                            <!-- Ícone de arquivo grande -->
+                            <rect x="60" y="100" width="80" height="100" fill="#3b82f6" opacity="0.8" rx="5"/>
+                            <text x="100" y="155" font-size="28" fill="white" text-anchor="middle" font-weight="bold">📄</text>
+                            
+                            <text x="100" y="235" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="600">10 MB</text>
+                            <text x="100" y="252" font-size="10" fill="#64748b" text-anchor="middle">100% qualidade</text>
+                            <text x="100" y="265" font-size="10" fill="#64748b" text-anchor="middle">1 min estéreo</text>
+                        </g>
+                        
+                        <!-- FLAC - Lossless -->
+                        <g>
+                            <rect x="200" y="110" width="110" height="110" fill="#d1fae5" stroke="#10b981" stroke-width="3" rx="8"/>
+                            <text x="255" y="40" font-size="14" fill="#065f46" text-anchor="middle" font-weight="bold">FLAC</text>
+                            <text x="255" y="60" font-size="11" fill="#10b981" text-anchor="middle">Sem perda</text>
+                            
+                            <!-- Ícone de arquivo médio -->
+                            <rect x="220" y="125" width="70" height="75" fill="#10b981" opacity="0.8" rx="5"/>
+                            <text x="255" y="167" font-size="24" fill="white" text-anchor="middle" font-weight="bold">📄</text>
+                            
+                            <text x="255" y="235" font-size="13" fill="#065f46" text-anchor="middle" font-weight="600">5-6 MB</text>
+                            <text x="255" y="252" font-size="10" fill="#64748b" text-anchor="middle">100% qualidade</text>
+                            <text x="255" y="265" font-size="10" fill="#64748b" text-anchor="middle">50% tamanho</text>
+                            
+                            <!-- Seta de compressão -->
+                            <path d="M 175 160 L 195 160" stroke="#10b981" stroke-width="2" marker-end="url(#compress)"/>
+                        </g>
+                        
+                        <!-- MP3 - Lossy -->
+                        <g>
+                            <rect x="340" y="150" width="70" height="70" fill="#fef3c7" stroke="#f59e0b" stroke-width="3" rx="8"/>
+                            <text x="375" y="40" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold">MP3</text>
+                            <text x="375" y="60" font-size="11" fill="#f59e0b" text-anchor="middle">Com perda</text>
+                            
+                            <!-- Ícone de arquivo pequeno -->
+                            <rect x="350" y="160" width="50" height="50" fill="#f59e0b" opacity="0.8" rx="5"/>
+                            <text x="375" y="192" font-size="20" fill="white" text-anchor="middle" font-weight="bold">📄</text>
+                            
+                            <text x="375" y="235" font-size="13" fill="#92400e" text-anchor="middle" font-weight="600">1 MB</text>
+                            <text x="375" y="252" font-size="10" fill="#64748b" text-anchor="middle">~95% qualidade</text>
+                            <text x="375" y="265" font-size="10" fill="#64748b" text-anchor="middle">10% tamanho</text>
+                            
+                            <!-- Seta de compressão -->
+                            <path d="M 315 180 L 335 180" stroke="#f59e0b" stroke-width="2" marker-end="url(#compress2)"/>
+                        </g>
+                        
+                        <!-- Streaming - Opus/AAC -->
+                        <g>
+                            <rect x="440" y="170" width="50" height="50" fill="#fce7f3" stroke="#ec4899" stroke-width="3" rx="8"/>
+                            <text x="465" y="40" font-size="14" fill="#9f1239" text-anchor="middle" font-weight="bold">Opus/AAC</text>
+                            <text x="465" y="60" font-size="11" fill="#ec4899" text-anchor="middle">Streaming</text>
+                            
+                            <!-- Ícone de arquivo muito pequeno -->
+                            <rect x="450" y="180" width="30" height="30" fill="#ec4899" opacity="0.8" rx="3"/>
+                            <text x="465" y="199" font-size="16" fill="white" text-anchor="middle" font-weight="bold">📄</text>
+                            
+                            <text x="465" y="235" font-size="13" fill="#9f1239" text-anchor="middle" font-weight="600">0.5 MB</text>
+                            <text x="465" y="252" font-size="10" fill="#64748b" text-anchor="middle">~90% qualidade</text>
+                            <text x="465" y="265" font-size="10" fill="#64748b" text-anchor="middle">5% tamanho</text>
+                            
+                            <!-- Seta de compressão -->
+                            <path d="M 415 190 L 435 190" stroke="#ec4899" stroke-width="2" marker-end="url(#compress3)"/>
+                        </g>
+                        
+                        <!-- Streaming icon -->
+                        <g>
+                            <circle cx="580" cy="195" r="30" fill="#2563eb" opacity="0.2"/>
+                            <path d="M 570 185 L 580 195 L 570 205 Z" fill="#2563eb"/>
+                            <text x="580" y="240" font-size="10" fill="#5b21b6" text-anchor="middle" font-weight="600">Reproduz</text>
+                            <text x="580" y="252" font-size="10" fill="#5b21b6" text-anchor="middle" font-weight="600">enquanto</text>
+                            <text x="580" y="264" font-size="10" fill="#5b21b6" text-anchor="middle" font-weight="600">baixa</text>
+                        </g>
+                        
+                        <!-- Setas de marcação -->
+                        <defs>
+                            <marker id="compress" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+                                <polygon points="0 0, 8 3, 0 6" fill="#10b981"/>
+                            </marker>
+                            <marker id="compress2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+                                <polygon points="0 0, 8 3, 0 6" fill="#f59e0b"/>
+                            </marker>
+                            <marker id="compress3" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+                                <polygon points="0 0, 8 3, 0 6" fill="#ec4899"/>
+                            </marker>
+                        </defs>
+                        
+                        <!-- Título inferior -->
+                        <text x="325" y="15" font-size="13" fill="#374151" text-anchor="middle" font-weight="600">Relação Tamanho × Qualidade (1 minuto de áudio estéreo)</text>
+                    </svg>
+                </div>
+                
+                <p>Os formatos de arquivo de áudio podem ser classificados em três categorias principais, cada uma com suas vantagens e desvantagens específicas:</p>
+
+                <div style="margin-top: 30px;">
+                    <h4 style="color: #2d3748; font-size: 1.3em; margin-bottom: 15px;">1. Formatos Não-Comprimidos (PCM)</h4>
+                    <p>Armazenam o áudio exatamente como foi digitalizado, sem nenhum processamento adicional. Oferecem qualidade máxima mas ocupam muito espaço.</p>
+
+                    <ul style="margin-left: 20px; margin-top: 15px; line-height: 2;">
+                        <li><strong>WAV (Waveform Audio File Format):</strong> Padrão Microsoft/IBM, usado em Windows. Suporta diversos formatos PCM.</li>
+                        <li><strong>AIFF (Audio Interchange File Format):</strong> Equivalente da Apple ao WAV, usado em Mac OS.</li>
+                        <li><strong>RAW/PCM:</strong> Dados de áudio puros sem cabeçalho, usado em sistemas embarcados.</li>
+                    </ul>
+
+                    <div class="info-box" style="margin-top: 15px;">
+                        <p><strong>Vantagens:</strong> Qualidade máxima, sem perda de dados, edição sem degradação</p>
+                        <p style="margin-top: 10px;"><strong>Desvantagens:</strong> Arquivos muito grandes (10 MB por minuto em estéreo CD quality)</p>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 1.5rem; padding: 1.5rem; background: #f9fafb; border: 2px solid #e5e7eb; border-radius: 8px;">
+                        <canvas id="compressionCanvas" width="600" height="180" style="max-width: 100%; border: 1px solid #d1d5db; background: white;"></canvas>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h4 style="color: #2d3748; font-size: 1.3em; margin-bottom: 15px;">2. Formatos com Compressão Sem Perda (Lossless)</h4>
+                    <p>Comprimem o áudio usando algoritmos matemáticos que permitem reconstruir o original perfeitamente. Como um arquivo ZIP para áudio.</p>
+
+                    <ul style="margin-left: 20px; margin-top: 15px; line-height: 2;">
+                        <li><strong>FLAC (Free Lossless Audio Codec):</strong> Open source, mais popular. Compressão ~50%, metadados ricos.</li>
+                        <li><strong>ALAC (Apple Lossless Audio Codec):</strong> Formato da Apple, integrado ao ecossistema iOS/macOS.</li>
+                        <li><strong>APE (Monkey's Audio):</strong> Alta compressão mas processamento lento.</li>
+                        <li><strong>WavPack:</strong> Híbrido, pode funcionar com ou sem perda.</li>
+                    </ul>
+
+                    <div class="info-box" style="margin-top: 15px;">
+                        <p><strong>Vantagens:</strong> Qualidade idêntica ao original, arquivo 50-60% menor que WAV</p>
+                        <p style="margin-top: 10px;"><strong>Desvantagens:</strong> Requer mais processamento para decodificar, menos compatível que MP3</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h4 style="color: #2d3748; font-size: 1.3em; margin-bottom: 15px;">3. Formatos com Compressão Com Perda (Lossy)</h4>
+                    <p>Removem informações consideradas menos importantes para a percepção humana. Usam modelos psicoacústicos para decidir o que pode ser descartado.</p>
+
+                    <ul style="margin-left: 20px; margin-top: 15px; line-height: 2;">
+                        <li><strong>MP3 (MPEG-1 Audio Layer 3):</strong> O mais universal. Taxas: 128-320 kbps. Compressão ~10:1.</li>
+                        <li><strong>AAC (Advanced Audio Coding):</strong> Successor do MP3, melhor qualidade na mesma taxa. Usado por YouTube, Apple Music.</li>
+                        <li><strong>OGG Vorbis:</strong> Open source, qualidade similar ao AAC. Popular em games (Unity, Unreal).</li>
+                        <li><strong>Opus:</strong> Moderno, otimizado para VoIP e streaming. Baixa latência.</li>
+                        <li><strong>WMA (Windows Media Audio):</strong> Formato Microsoft, menos usado hoje.</li>
+                    </ul>
+
+                    <div class="info-box" style="margin-top: 15px;">
+                        <p><strong>Vantagens:</strong> Arquivos muito pequenos (1 MB por minuto), compatibilidade universal</p>
+                        <p style="margin-top: 10px;"><strong>Desvantagens:</strong> Perda irreversível de qualidade, não adequado para produção profissional</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Comparação Visual de Formatos (SVG)</h3>
+                <div style="text-align: center; margin: 30px 0;">
+                    <svg width="100%" height="250" viewBox="0 0 700 250" style="max-width: 700px; margin: 0 auto; display: block;">
+                        <!-- WAV -->
+                        <rect x="50" y="50" width="150" height="150" fill="#e8f5e9" stroke="#38a169" stroke-width="3" rx="10"/>
+                        <text x="125" y="85" font-size="24" font-weight="bold" fill="#2d3748" text-anchor="middle">WAV</text>
+                        <text x="125" y="110" font-size="14" fill="#666" text-anchor="middle">Sem compressão</text>
+                        <text x="125" y="135" font-size="28" font-weight="bold" fill="#38a169" text-anchor="middle">10MB</text>
+                        <text x="125" y="160" font-size="12" fill="#999" text-anchor="middle">1 minuto</text>
+                        <text x="125" y="180" font-size="16" fill="#2d3748" text-anchor="middle">100%</text>
+                        <text x="125" y="220" font-size="14" fill="#38a169" text-anchor="middle">Qualidade máxima</text>
+
+                        <!-- MP3 -->
+                        <rect x="275" y="80" width="120" height="120" fill="#fff3e0" stroke="#f59e0b" stroke-width="3" rx="10"/>
+                        <text x="335" y="110" font-size="22" font-weight="bold" fill="#2d3748" text-anchor="middle">MP3</text>
+                        <text x="335" y="130" font-size="13" fill="#666" text-anchor="middle">Com perda</text>
+                        <text x="335" y="155" font-size="24" font-weight="bold" fill="#f59e0b" text-anchor="middle">1MB</text>
+                        <text x="335" y="175" font-size="11" fill="#999" text-anchor="middle">1 minuto</text>
+                        <text x="335" y="220" font-size="14" fill="#f59e0b" text-anchor="middle">Bom equilíbrio</text>
+
+                        <!-- AAC -->
+                        <rect x="470" y="90" width="110" height="110" fill="#e0f2fe" stroke="#3b82f6" stroke-width="3" rx="10"/>
+                        <text x="525" y="115" font-size="20" font-weight="bold" fill="#2d3748" text-anchor="middle">AAC</text>
+                        <text x="525" y="133" font-size="12" fill="#666" text-anchor="middle">Com perda</text>
+                        <text x="525" y="155" font-size="22" font-weight="bold" fill="#3b82f6" text-anchor="middle">0.8MB</text>
+                        <text x="525" y="172" font-size="10" fill="#999" text-anchor="middle">1 minuto</text>
+                        <text x="525" y="220" font-size="13" fill="#3b82f6" text-anchor="middle">Mais eficiente</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Psicoacústica: A Ciência por Trás da Compressão</h3>
+                <p>Codecs com perda como MP3 e AAC usam modelos psicoacústicos para identificar quais partes do áudio podem ser removidas sem percepção audível:</p>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Fenômenos Psicoacústicos Explorados:</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Mascaramento de Frequência:</strong> Sons altos mascaram sons mais fracos em frequências próximas</li>
+                        <li><strong>Mascaramento Temporal:</strong> Sons altos mascaram sons mais fracos imediatamente antes e depois</li>
+                        <li><strong>Limiar de Audição:</strong> Frequências muito baixas ou altas precisam ser mais altas para serem ouvidas</li>
+                        <li><strong>Resolução de Frequência:</strong> Ouvido humano tem resolução limitada em altas frequências</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Como Funciona a Compressão:</h4>
+                    <p>O codec analisa o áudio em blocos (frames) e para cada um:</p>
+                    <ol style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li>Divide o sinal em bandas de frequência usando banco de filtros</li>
+                        <li>Aplica modelo psicoacústico para identificar sons mascarados</li>
+                        <li>Aloca bits dinamicamente: mais bits para informação importante, menos para mascarada</li>
+                        <li>Quantiza mais grosseiramente componentes menos importantes</li>
+                        <li>Aplica compressão sem perda (Huffman) nos dados resultantes</li>
+                    </ol>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <p><strong>Limitações da Psicoacústica:</strong> Modelos psicoacústicos são baseados em médias populacionais. Alguns ouvintes (especialmente músicos e engenheiros) podem detectar artefatos que a maioria não percebe. Além disso, processamento adicional (EQ, compressão) pode revelar artefatos ocultos.</p>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Comparação Detalhada de Codecs</h3>
+                
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">MP3 (MPEG-1 Audio Layer 3)</h4>
+                    <p>O codec mais universal, desenvolvido nos anos 1990:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li><strong>Vantagens:</strong> Compatibilidade universal, maduro e estável</li>
+                        <li><strong>Desvantagens:</strong> Eficiência inferior a codecs modernos, artefatos em altas frequências</li>
+                        <li><strong>Bitrate típico:</strong> 128-320 kbps (CBR ou VBR)</li>
+                        <li><strong>Melhor para:</strong> Distribuição ampla, compatibilidade máxima</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">AAC (Advanced Audio Coding)</h4>
+                    <p>Successor oficial do MP3, usado por Apple, YouTube, streaming:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li><strong>Vantagens:</strong> 30% mais eficiente que MP3, melhor qualidade em bitrates baixos</li>
+                        <li><strong>Desvantagens:</strong> Variantes múltiplas (AAC-LC, HE-AAC), complexidade</li>
+                        <li><strong>Bitrate típico:</strong> 96-256 kbps</li>
+                        <li><strong>Melhor para:</strong> Streaming, dispositivos móveis, iTunes/Apple Music</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Opus</h4>
+                    <p>Codec moderno, open source, otimizado para baixa latência:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li><strong>Vantagens:</strong> Latência muito baixa (5ms possível), adaptativo, excelente para voz e música</li>
+                        <li><strong>Desvantagens:</strong> Menor suporte em hardware legacy</li>
+                        <li><strong>Bitrate típico:</strong> 6-510 kbps (muito flexível)</li>
+                        <li><strong>Melhor para:</strong> VoIP, videoconferência, streaming ao vivo, Discord</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">OGG Vorbis</h4>
+                    <p>Alternativa open source ao MP3:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li><strong>Vantagens:</strong> Open source, sem royalties, boa qualidade</li>
+                        <li><strong>Desvantagens:</strong> Suporte limitado em hardware, menos comum</li>
+                        <li><strong>Bitrate típico:</strong> 64-320 kbps VBR</li>
+                        <li><strong>Melhor para:</strong> Games (Unity, Unreal), streaming open source</li>
+                    </ul>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <p><strong>Bitrate Variável (VBR) vs Constante (CBR):</strong> VBR aloca mais bits para trechos complexos e menos para silencio/sons simples, resultando em melhor qualidade percebida pelo mesmo tamanho médio. CBR mantém taxa fixa, importante para streaming em tempo real.</p>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Bitrates e Qualidade</h3>
+                <p>Para formatos comprimidos com perda, o bitrate (taxa de bits) determina o equilíbrio entre qualidade e tamanho de arquivo:</p>
+
+                <div style="background: #f9fafb; padding: 25px; border-radius: 8px; margin: 20px 0; border: 2px solid #e5e5e5;">
+                    <p style="font-weight: 600; margin-bottom: 15px;">MP3 Bitrates Comuns:</p>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li><strong>64-96 kbps:</strong> Voz/podcasts básicos. Qualidade telefônica</li>
+                        <li><strong>128 kbps:</strong> Qualidade FM rádio. Mínimo aceitável para música</li>
+                        <li><strong>192 kbps:</strong> Boa qualidade. Maioria das pessoas não nota diferença do original</li>
+                        <li><strong>256 kbps:</strong> Qualidade muito boa. Usado em serviços de streaming premium</li>
+                        <li><strong>320 kbps:</strong> Máxima qualidade MP3. Próximo ao transparente</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>Dica Profissional:</strong> Para streaming de música, 256 kbps AAC é geralmente preferível a 320 kbps MP3, oferecendo qualidade similar com menor tamanho. Para produção profissional, sempre trabalhe com WAV ou FLAC até a exportação final.</p>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Casos de Uso por Formato</h3>
+                <p>Escolher o formato correto depende do contexto de uso:</p>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Produção Musical:</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Gravação:</strong> WAV 24-bit/48kHz ou superior</li>
+                        <li><strong>Edição:</strong> WAV ou formato nativo da DAW (32-bit float)</li>
+                        <li><strong>Masterização:</strong> WAV 24-bit para processamento, 16-bit com dithering para CD</li>
+                        <li><strong>Distribuição:</strong> FLAC para alta qualidade, MP3/AAC para streaming</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Podcasts e Vídeos:</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Gravação:</strong> WAV 24-bit/48kHz (sincroniza com vídeo 24fps)</li>
+                        <li><strong>Edição:</strong> WAV nativo</li>
+                        <li><strong>Distribuição:</strong> MP3 128-192 kbps (podcasts), AAC 256 kbps (vídeo)</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Games e Aplicações Interativas:</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Música de fundo:</strong> OGG Vorbis 128-192 kbps (looping perfeito)</li>
+                        <li><strong>Efeitos sonoros:</strong> WAV 16-bit/44.1kHz (latência zero)</li>
+                        <li><strong>Diálogos:</strong> OGG Vorbis 64-96 kbps ou comprimido nativo da engine</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">Arquivo e Preservação:</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Arquivo master:</strong> WAV 24-bit/96kHz (não comprimido)</li>
+                        <li><strong>Backup comprimido:</strong> FLAC (compressão sem perda, economiza 40-60%)</li>
+                        <li><strong>Distribuição:</strong> Múltiplos formatos derivados do master</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>Vídeo Tutorial: Formatos de Áudio</h3>
+                <p style="margin-bottom: 20px;">Assista um tutorial explicando quando usar cada formato de áudio.</p>
+                <div style="text-align: center; margin: 20px 0;">
+                    <div style="background: #f9fafb; padding: 80px; border-radius: 12px; color: #2d3748; border: 2px solid #e5e5e5;">
+                        <p style="font-size: 3em; margin-bottom: 10px;">🎥</p>
+                        <p style="font-size: 1.2em; font-weight: 600;">Vídeo: Escolhendo o Formato Certo</p>
+                        <p style="margin-top: 10px; color: #666;">Placeholder para vídeo educativo</p>
+                    </div>
+                    <p style="margin-top: 15px; color: #666;">
+                        Duração: 5:30 min | Nível: Básico
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div style="text-align: center; margin-bottom: 1rem;">
+                <button id="bgMusicBtn" onclick="playBackgroundMusic()" style="background: #2563eb; border: 2px solid #2563eb; color: white; padding: 0.5rem 1.25rem; border-radius: 25px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; transition: all 0.3s;">
+                    <span id="musicIcon">▶</span>
+                    <span id="musicText">Tocar Música Ambiente</span>
+                </button>
+                <span id="musicStatus" style="display: block; color: rgba(255,255,255,0.7); font-size: 0.875rem; margin-top: 0.5rem; min-height: 20px;"></span>
+            </div>
+            <p>Protótipo Educacional - Áudio Digital para Sistemas Multimídia</p>
+            <p style="margin-top: 10px;">Desenvolvido com HTML, CSS e JavaScript + Web Audio API</p>
+        </footer>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/background-music.js"></script>
+    <script>
+        // Canvas compression demonstration
+        const canvas = document.getElementById('compressionCanvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+            const height = canvas.height;
+            
+            // Background
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, width, height);
+            
+            const blockWidth = width / 3 - 20;
+            const blockHeight = height - 80;
+            const startY = 50;
+            
+            // WAV - Não comprimido
+            ctx.fillStyle = '#3b82f6';
+            ctx.fillRect(20, startY, blockWidth, blockHeight);
+            ctx.fillStyle = '#1e40af';
+            ctx.font = 'bold 14px sans-serif';
+            ctx.fillText('WAV', 20 + blockWidth / 2 - 20, 30);
+            ctx.font = '12px sans-serif';
+            ctx.fillText('10 MB', 20 + blockWidth / 2 - 20, height - 20);
+            
+            // Padrão de dados (pixels para simular não-comprimido)
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+            for (let y = startY + 5; y < startY + blockHeight - 5; y += 4) {
+                for (let x = 25; x < 20 + blockWidth - 5; x += 4) {
+                    ctx.fillRect(x, y, 2, 2);
+                }
+            }
+            
+            // FLAC - Compressão sem perda
+            const flacWidth = blockWidth * 0.5;
+            ctx.fillStyle = '#10b981';
+            ctx.fillRect(width / 3 + 10, startY, flacWidth, blockHeight);
+            ctx.fillStyle = '#065f46';
+            ctx.font = 'bold 14px sans-serif';
+            ctx.fillText('FLAC', width / 3 + 10 + flacWidth / 2 - 25, 30);
+            ctx.font = '12px sans-serif';
+            ctx.fillText('5 MB', width / 3 + 10 + flacWidth / 2 - 20, height - 20);
+            
+            // Padrão de dados comprimido
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+            for (let y = startY + 5; y < startY + blockHeight - 5; y += 6) {
+                for (let x = width / 3 + 15; x < width / 3 + 10 + flacWidth - 5; x += 6) {
+                    ctx.fillRect(x, y, 3, 3);
+                }
+            }
+            
+            // MP3 - Compressão com perda
+            const mp3Width = blockWidth * 0.1;
+            ctx.fillStyle = '#f59e0b';
+            ctx.fillRect(2 * width / 3, startY, mp3Width, blockHeight);
+            ctx.fillStyle = '#92400e';
+            ctx.font = 'bold 14px sans-serif';
+            ctx.fillText('MP3', 2 * width / 3 + mp3Width / 2 - 20, 30);
+            ctx.font = '12px sans-serif';
+            ctx.fillText('1 MB', 2 * width / 3 + mp3Width / 2 - 17, height - 20);
+            
+            // Padrão de dados altamente comprimido
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+            for (let y = startY + 5; y < startY + blockHeight - 5; y += 8) {
+                for (let x = 2 * width / 3 + 5; x < 2 * width / 3 + mp3Width - 5; x += 8) {
+                    ctx.fillRect(x, y, 4, 4);
+                }
+            }
+            
+            // Setas de compressão
+            ctx.strokeStyle = '#6b7280';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(20 + blockWidth + 10, height / 2);
+            ctx.lineTo(width / 3 - 10, height / 2);
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.moveTo(width / 3 + 10 + flacWidth + 10, height / 2);
+            ctx.lineTo(2 * width / 3 - 10, height / 2);
+            ctx.stroke();
+            
+            // Texto
+            ctx.fillStyle = '#374151';
+            ctx.font = '11px sans-serif';
+            ctx.fillText('Compressão', 20 + blockWidth + 15, height / 2 - 5);
+            ctx.fillText('Mais compressão', width / 3 + 10 + flacWidth + 15, height / 2 - 5);
+        }
+    </script>
+</body>
+</html>

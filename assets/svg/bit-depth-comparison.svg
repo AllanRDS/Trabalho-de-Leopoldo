@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="220" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="600" height="220" fill="white"/>
+    
+    <!-- Title -->
+    <text x="300" y="25" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Profundidade de Bits (Bit Depth)</text>
+    
+    <!-- 8-bit visualization -->
+    <text x="150" y="55" font-size="12" fill="#ef4444" text-anchor="middle" font-weight="600">8 bits = 256 níveis</text>
+    <g>
+        <rect x="50" y="65" width="200" height="10" fill="#fef2f2" stroke="#ef4444"/>
+        <rect x="50" y="80" width="200" height="10" fill="#fecaca" stroke="#ef4444"/>
+        <rect x="50" y="95" width="200" height="10" fill="#fca5a5" stroke="#ef4444"/>
+        <rect x="50" y="110" width="200" height="10" fill="#f87171" stroke="#ef4444"/>
+        <rect x="50" y="125" width="200" height="10" fill="#ef4444" stroke="#ef4444"/>
+        <rect x="50" y="140" width="200" height="10" fill="#dc2626" stroke="#ef4444"/>
+        <rect x="50" y="155" width="200" height="10" fill="#b91c1c" stroke="#ef4444"/>
+        <rect x="50" y="170" width="200" height="10" fill="#991b1b" stroke="#ef4444"/>
+    </g>
+    <text x="150" y="200" font-size="9" fill="#64748b" text-anchor="middle">Menos níveis = Mais ruído</text>
+    
+    <!-- 16-bit visualization -->
+    <text x="450" y="55" font-size="12" fill="#10b981" text-anchor="middle" font-weight="600">16 bits = 65.536 níveis</text>
+    <g>
+        <!-- Many more gradient levels -->
+        <rect x="350" y="65" width="200" height="1.5" fill="#f0fdf4" stroke="none"/>
+        <rect x="350" y="67" width="200" height="1.5" fill="#dcfce7" stroke="none"/>
+        <rect x="350" y="69" width="200" height="1.5" fill="#bbf7d0" stroke="none"/>
+        <rect x="350" y="71" width="200" height="1.5" fill="#86efac" stroke="none"/>
+        <rect x="350" y="73" width="200" height="1.5" fill="#6ee7b7" stroke="none"/>
+        <rect x="350" y="75" width="200" height="1.5" fill="#5eead4" stroke="none"/>
+        <rect x="350" y="77" width="200" height="1.5" fill="#4ade80" stroke="none"/>
+        <rect x="350" y="79" width="200" height="1.5" fill="#34d399" stroke="none"/>
+        <rect x="350" y="81" width="200" height="1.5" fill="#22c55e" stroke="none"/>
+        <rect x="350" y="83" width="200" height="1.5" fill="#16a34a" stroke="none"/>
+        <rect x="350" y="85" width="200" height="1.5" fill="#15803d" stroke="none"/>
+        <rect x="350" y="87" width="200" height="1.5" fill="#166534" stroke="none"/>
+        <!-- Continue pattern -->
+        <rect x="350" y="89" width="200" height="90" fill="url(#gradient16bit)" stroke="#10b981"/>
+    </g>
+    <text x="450" y="200" font-size="9" fill="#64748b" text-anchor="middle">Mais níveis = Som mais suave</text>
+    
+    <!-- Gradient definition -->
+    <defs>
+        <linearGradient id="gradient16bit" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#dcfce7;stop-opacity:1" />
+            <stop offset="25%" style="stop-color:#86efac;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#22c55e;stop-opacity:1" />
+            <stop offset="75%" style="stop-color:#16a34a;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#166534;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Bottom note -->
+    <text x="300" y="215" font-size="10" fill="#6b7280" text-anchor="middle" font-style="italic">16 bits permite transições muito mais suaves entre amplitudes</text>
+</svg>
