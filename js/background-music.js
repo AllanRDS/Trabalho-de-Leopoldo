@@ -63,23 +63,23 @@ class GlobalMusicPlayer {
 
     async generateAndPlay() {
         try {
-            // Parsear e reproduzir MIDI usando Web MIDI API synthesis
-            const response = await fetch('assets/audio/loop_continuo.mid');
+            // Parsear e reproduzir MIDI editado usando Web MIDI API synthesis
+            const response = await fetch('assets/audio/Midi Editado.mid');
             const arrayBuffer = await response.arrayBuffer();
             const midiData = this.parseMIDI(arrayBuffer);
-            
+
             // Sintetizar áudio a partir das notas MIDI
             const audioContext = new (window.AudioContext || window.webkitAudioContext)();
             const audioBuffer = await this.synthesizeMIDI(audioContext, midiData);
-            
+
             // Converter para blob
             const wavData = this.encodeWAV(audioBuffer);
             const blob = new Blob([wavData], { type: 'audio/wav' });
             const url = URL.createObjectURL(blob);
-            
+
             this.audio.src = url;
             this.audio.loop = true; // Garantir loop
-            
+
             // Salvar URL no sessionStorage
             try {
                 sessionStorage.setItem(this.audioDataKey, url);
@@ -103,11 +103,11 @@ class GlobalMusicPlayer {
         const view = new DataView(arrayBuffer);
         const notes = [];
         let tempo = 500000; // 120 BPM default
-        
+
         // Procurar por eventos de nota (0x90 = note on, 0x80 = note off)
         for (let i = 0; i < view.byteLength - 3; i++) {
             const status = view.getUint8(i);
-            
+
             if ((status & 0xF0) === 0x90) { // Note On
                 const note = view.getUint8(i + 1);
                 const velocity = view.getUint8(i + 2);
@@ -121,7 +121,7 @@ class GlobalMusicPlayer {
                 }
             }
         }
-        
+
         return { notes, tempo };
     }
 
@@ -130,21 +130,21 @@ class GlobalMusicPlayer {
         const sampleRate = audioContext.sampleRate;
         const audioBuffer = audioContext.createBuffer(1, sampleRate * duration, sampleRate);
         const channelData = audioBuffer.getChannelData(0);
-        
+
         // Sintetizar cada nota
         midiData.notes.forEach(noteData => {
             const freq = 440 * Math.pow(2, (noteData.note - 69) / 12); // A4 = 440Hz
             const startSample = Math.floor(noteData.time * sampleRate);
             const durationSamples = Math.floor(noteData.duration * sampleRate);
             const velocity = noteData.velocity / 127;
-            
+
             for (let i = 0; i < durationSamples && startSample + i < channelData.length; i++) {
                 const t = i / sampleRate;
                 const envelope = Math.exp(-3 * t / noteData.duration); // Decay exponencial
                 channelData[startSample + i] += Math.sin(2 * Math.PI * freq * t) * envelope * velocity * 0.3;
             }
         });
-        
+
         return audioBuffer;
     }
 

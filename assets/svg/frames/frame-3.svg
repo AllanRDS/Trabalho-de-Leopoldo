@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Fundo branco -->
+    <rect width="600" height="200" fill="white"/>
+    
+    <!-- Eixo horizontal -->
+    <line x1="50" y1="100" x2="550" y2="100" stroke="#9ca3af" stroke-width="1" stroke-dasharray="5,5"/>
+    <text x="20" y="105" font-size="12" fill="#6b7280">0</text>
+    
+    <!-- Onda senoidal (curva azul) -->
+    <path d="M 50 100 Q 87.5 50, 125 100 T 200 100 T 275 100 T 350 100 T 425 100 T 500 100 T 550 100"
+          stroke="#2563eb" stroke-width="3" fill="none"/>
+    
+    <!-- Três amostras -->
+    <circle cx="125" cy="50" r="4" fill="#ef4444"/>
+    <circle cx="200" cy="100" r="4" fill="#ef4444"/>
+    <circle cx="275" cy="150" r="4" fill="#ef4444"/>
+    <line x1="125" y1="50" x2="125" y2="100" stroke="#ef4444" stroke-width="1" stroke-dasharray="2,2"/>
+    <line x1="275" y1="150" x2="275" y2="100" stroke="#ef4444" stroke-width="1" stroke-dasharray="2,2"/>
+    
+    <!-- Texto descritivo -->
+    <text x="300" y="180" font-size="14" fill="#374151" text-anchor="middle" font-weight="600">
+        Frame 3: Terceira Amostra (t=3)
+    </text>
+</svg>
